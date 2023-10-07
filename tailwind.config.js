@@ -32,9 +32,9 @@ module.exports = {
       colors: {
         'github': '#24292F',
         "color": "#414a4c",
-        "theme": "#13274F",
-        "button": "#5072A7",
-        "button_hover": "#93c5fd",
+        "theme": "#900C3F",
+        "button": "#DC143C",
+        "button_hover": "#DC143C",
         
       },
       fontFamily: {

@@ -43,7 +43,7 @@ const HomepageTitle = ({ title, country, language }) => {
 
             {title &&
                 <Link href={href}>
-                    <div className="flex justify-between items-center  rounded bg-button text-white  p-2 px-3  hover:bg-theme ">
+                    <div className="flex justify-between items-center  rounded bg-theme text-white  p-2 px-3  hover:bg-button_hover ">
                         <div className="flex space-x-2 items-center ">
 
                             <h2 className="lg:text-2xl text-lg  font-arial " >{title}</h2>

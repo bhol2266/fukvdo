@@ -166,7 +166,7 @@ function Navbar() {
 
         <div className='font-inter'>
 
-            <div className="bg-[#13274F] text-white p-2  shadow-md lg:hidden">
+            <div className="bg-theme text-white p-2  shadow-md lg:hidden">
 
                 <Disclosure as="nav" >
                     {({ open }) => (
@@ -176,7 +176,7 @@ function Navbar() {
                                 <div className='flex items-center space-x-1' >
 
                                     <Link href='/'>
-                                        <p className=' align-center text-center font-Dancing font-bold  text-3xl pl-1 pr-1 cursor-pointer lg:text-left lg:ml-6 '>Chutlunds.com</p>
+                                        <p className=' align-center text-center font-inter font-bold  text-3xl pl-1 pr-1 cursor-pointer lg:text-left lg:ml-6 '>FuckVideo.live</p>
                                     </Link>
                                     {location &&
                                         <div className='cursor-pointer' onClick={handleClickFlag}>
@@ -243,7 +243,7 @@ function Navbar() {
                                                 }
 
                                                 {loggedIn &&
-                                                    <h2 className='font-Opensans text-theme  text-[14px] cursor-pointer text-center text-theme font-semibold my-2'>{getCookie("email")}</h2>
+                                                    <h2 className='font-Opensans text-theme  text-[14px] cursor-pointer text-center font-semibold my-2'>{getCookie("email")}</h2>
                                                 }
 
 
@@ -330,7 +330,7 @@ function Navbar() {
                                 return (
                                     <div key={tag} onClick={() => {
                                         setsearchKey(tag); setshowSuggested(false); router.push(`/search/${tag.trim()}`)
-                                    }} className='flex items-center space-x-2 p-2 border-[1px] border-gray-300 cursor-pointer hover:bg-blue-100 pl-4'>
+                                    }} className='flex items-center space-x-2 p-2 border-[1px] border-gray-300 cursor-pointer hover:bg-red-100 pl-4'>
                                         {/* <img src='/login/history.png' className='h-[20px]' /> */}
                                         <p className='text-[12px] fontinter text-theme'>{tag}</p>
 
@@ -347,10 +347,10 @@ function Navbar() {
 
 
             </div>
-            <div className='flex justify-around items-center mb-1 bg-blue-100 shadow-lg lg:hidden font-arial px-2'>
+            <div className='flex justify-around items-center mb-1 bg-red-100 shadow-lg lg:hidden font-arial px-2'>
 
                 <Link href='/'>
-                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme  text-center p-1 hover:text-red-600  '>Home</p>
+                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme   text-center p-1 hover:text-red-600  '>Home</p>
                 </Link>
 
                 <Link href='/category'>
@@ -374,14 +374,14 @@ function Navbar() {
 
 
                 {/* Navbar */}
-                <div className=' flex items-center justify-between bg-[#13274F] pt-2 pb-2 text-white'>
+                <div className=' flex items-center justify-between bg-theme pt-2 pb-2 text-white'>
 
                     <div className='flex items-center space-x-1 md:space-x-3  ml-2' >
 
                         <img src='/erotic.png' alt="loading..." className='w-14' />
 
                         <Link href='/'>
-                            <p className=' align-center text-center font-Dancing font-bold  text-4xl cursor-pointer lg:text-left '>Chutlunds.com</p>
+                            <p className=' align-center text-center font-Dancing font-bold  text-4xl cursor-pointer lg:text-left '>FuckVideo.live</p>
                         </Link>
                         {location &&
 
@@ -430,8 +430,7 @@ function Navbar() {
                                             return (
                                                 <div key={tag} onClick={() => {
                                                     setsearchKey(tag); setshowSuggested(false); router.push(`/search/${tag.trim()}`)
-                                                }} className='flex items-center space-x-2 p-2 border-[1px] border-gray-300 cursor-pointer hover:bg-blue-100 pl-4'>
-                                                    {/* <img src='/login/history.png' className='h-[20px]' /> */}
+                                                }} className='flex items-center space-x-2 p-2 border-[1px] border-gray-300 cursor-pointer hover:bg-red-100 pl-4'>
                                                     <p className='text-[12px] fontinter text-theme'>{tag}</p>
 
                                                 </div>
@@ -485,7 +484,7 @@ function Navbar() {
 
 
 
-                <div className='w-full bg-blue-100 text-theme items-center justify-around   flex mb-2 p-1 shadow-lg'>
+                <div className='w-full bg-red-100 text-theme items-center justify-around   flex mb-2 p-1 shadow-lg'>
                     {navigation.map(item => {
 
                         return (
