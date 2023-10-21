@@ -177,10 +177,10 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
           <Videos data={video_collection[2].slice(0, 12)} />
           <HomepageTitle title='Trending Porn Videos' />
           <Videos data={video_collection[0].slice(0, 12)} /> */}
-          <HomepageTitle title='Upcoming Porn Videos' />
+          {/* <HomepageTitle title='Upcoming Porn Videos' />
           <Videos data={video_collection[1]} />
           <HomepageTitle title='New Porn Videos' />
-          <Videos data={video_collection[3]} />
+          <Videos data={video_collection[3]} /> */}
 
         </div>
       </main>
