@@ -13,82 +13,20 @@ import Outstreams from '../../components/Ads/Outstream';
 import { BeatLoader } from 'react-spinners'
 
 
-
-export async function getServerSideProps(context) {
-
-    const { video } = context.query;
-    const keyy = video.substring(video.indexOf("video/"), video.indexOf("*"))
-    const title = video.substring(video.indexOf("*") + 1, video.length).trim();
-
-
-    var videolink_qualities_screenshots = {}
-    var preloaded_video_quality = ''
-    var relatedVideos = []
-    var pornstar = []
-    var videodetails = {}
-    var noVideos = false
-    var serverError = false
-
-
-    try {
-
-        let api = `http://localhost:3000/api/spangbang/videoPlayer`
-
-        const rawResponse = await fetch(api, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ href: `https://spankbang.party/${keyy}/video/${title}` })
-
-        });
-
-
-        const data = await rawResponse.json();
-
-
-
-
-        videolink_qualities_screenshots = data.videolink_qualities_screenshots
-        preloaded_video_quality = data.preloaded_video_quality
-        relatedVideos = data.relatedVideos
-        pornstar = data.pornstar
-        videodetails = data.video_details
-        noVideos = data.noVideos
-
-    } catch (error) {
-        serverError = true
-    }
-
-
-
-    console.log('====================================');
-    console.log(videolink_qualities_screenshots);
-    console.log('====================================');
-
-    return {
-        props: {
-            videolink_qualities_screenshots: videolink_qualities_screenshots,
-            preloaded_video_quality: preloaded_video_quality,
-            relatedVideos: relatedVideos,
-            pornstar: pornstar,
-            video_details: videodetails,
-            videoTitleBackUp: title,
-            noVideo: noVideos,
-            serverError: serverError,
-        }
-    }
-}
-
-
-
-function Videoplayer({ serverError, videolink_qualities_screenshots, preloaded_video_quality, relatedVideos, pornstar, video_details, videoTitleBackUp, noVideo }) {
+function Videoplayer() {
 
     const router = useRouter()
     const { video } = router.query;
 
-    const [spinnerLoading, setspinnerLoading] = useState(false)
+    const [spinnerLoading, setspinnerLoading] = useState(true)
+    const [serverError, setServerError] = useState(false);
+    const [videolink_qualities_screenshots, setVideolinkQualitiesScreenshots] = useState({});
+    const [preloaded_video_quality, setPreloadedVideoQuality] = useState('');
+    const [relatedVideos, setRelatedVideos] = useState([]);
+    const [pornstar, setPornstar] = useState([]);
+    const [video_details, setVideoDetails] = useState({});
+    const [videoTitleBackUp, setVideoTitleBackUp] = useState("");
+    const [noVideo, setNoVideo] = useState(false);
 
 
     const [Quality, setQuality] = useState("")
@@ -108,11 +46,10 @@ function Videoplayer({ serverError, videolink_qualities_screenshots, preloaded_v
 
         const keyy = video.substring(video.indexOf("video/"), video.indexOf("*"))
         const title = video.substring(video.indexOf("*") + 1, video.length).trim();
-        // setVideoTitleBackUp(title)
+        setVideoTitleBackUp(title)
         const fetchVideoDetails = async () => {
 
-            // let api=`https://www.FuckVideo.live/api/spangbang/videoPlayer`
-            let api = `http://localhost:3000/api/spangbang/videoPlayer`
+            let api=`https://fuckvideo.live//api/spangbang/videoPlayer`
             // let api=`https://clownfish-app-jn7w9.ondigitalocean.app/getVideoPageDetails`
 
             const rawResponse = await fetch(api, {
@@ -165,7 +102,14 @@ function Videoplayer({ serverError, videolink_qualities_screenshots, preloaded_v
             setcountryVideo(content.data.finalDataArray)
 
         }
-     
+        try {
+            fetchVideoDetails()
+        } catch (error) {
+            console.log('====================================');
+            console.log(error);
+            console.log('====================================');
+            setServerError(true)
+        }
 
 
         let uniqarray = [...new Set(videolink_qualities_screenshots.tagsArray)];
@@ -206,7 +150,7 @@ function Videoplayer({ serverError, videolink_qualities_screenshots, preloaded_v
     if (spinnerLoading) {
         return (
             <div className="flex justify-center mx-auto mt-10 h-screen mt-[100px]">
-                <BeatLoader loading size={25} color={'#900C3F'} />
+                <BeatLoader loading size={25} color={'#13274F'} />
             </div>
         )
     }
