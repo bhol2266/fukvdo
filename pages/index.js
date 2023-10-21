@@ -168,7 +168,7 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
             </>
           } */}
 
-          <HomepageTitle title='Desi Sex Videos' />
+          {/* <HomepageTitle title='Desi Sex Videos' />
           <Videos data={shuffle(desiVideosDataArray).slice(0, 12)} />
           <HomepageTitle title='Desi MMS' />
           <Videos data={shuffle(desiMmsVideoArray).slice(0, 12)} />
@@ -180,7 +180,7 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
           <HomepageTitle title='Upcoming Porn Videos' />
           <Videos data={video_collection[1]} />
           <HomepageTitle title='New Porn Videos' />
-          <Videos data={video_collection[3]} />
+          <Videos data={video_collection[3]} /> */}
 
         </div>
       </main>
