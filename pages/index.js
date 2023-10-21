@@ -25,29 +25,34 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
 
   const { currentLocation, setcurrentLocation } = useContext(videosContext);
   const [countryVideos, setcountryVideos] = useState([]);
+  const [countryName, setcountryName] = useState("");
   const [countryLanguage, setcountryLanguage] = useState('');
 
   const router = useRouter()
 
 
   async function fetchVideos(data) {
+
+    console.log("--------------------x---------------------------x--------------------------x---------------------------");
+
     const lang = getLanguge(data.countryName)
     setcountryLanguage(lang)
 
     //value is languge of country
+
     let url = `https://spankbang.party/s/${lang.toLowerCase().trim()}/`
 
-    const rawResponse = await fetch('/api/spangbang', {
+    const rawResponse = await fetch('/api/spangbang/getvideos', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(url)
+      body: JSON.stringify({ url: url })
     });
     const content = await rawResponse.json();
 
-    setcountryVideos(content.data.finalDataArray)
+    setcountryVideos(content.finalDataArray)
   }
 
   async function fetchLocation() {
@@ -58,6 +63,7 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
       const parsedLoaction = JSON.parse(location_localstorage)
       setcurrentLocation(parsedLoaction)
       countryUpdated_DB(parsedLoaction.countryName)
+      setcountryName(parsedLoaction.countryName)
       await fetchVideos(parsedLoaction)
 
     } else {
@@ -67,6 +73,7 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
         setcurrentLocation(data)
         await fetchVideos(data)
         await countryUpdated_DB(data.countryName)
+        setcountryName(data.countryName)
         localStorage.setItem("location", JSON.stringify(data))
       } catch (error) {
         console.log(error);
@@ -159,28 +166,36 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
             Free desi sex videos, desi mms, Indian sex videos, desi porn videos, devar bhabhi ki chudai, aunty ki chudai collection. full hd indian sex videos download free.
           </h1> */}
 
-          
 
-          {/* {countryVideos.length !== 0 &&
+
+
+          {countryVideos.length !== 0 && countryName === "India" &&
+            <>
+              <HomepageTitle title='Desi Sex Videos' />
+              <Videos data={shuffle(desiVideosDataArray).slice(0, 12)} />
+              <HomepageTitle title='Desi MMS' />
+              <Videos data={shuffle(desiMmsVideoArray).slice(0, 12)} />
+            </>
+          }
+
+
+          <HomepageTitle title='Popular Porn Videos' />
+          <Videos data={video_collection[2].slice(0, 15)} />
+
+          {countryVideos.length !== 0 &&
             <>
               <HomepageTitle title={`Popular Porn Videos in ${currentLocation.countryCode}`} country={currentLocation.countryName} language={countryLanguage} />
               <Videos data={shuffle(countryVideos).slice(0, 12)} />
             </>
-          } */}
+          }
 
-          {/* <HomepageTitle title='Desi Sex Videos' />
-          <Videos data={shuffle(desiVideosDataArray).slice(0, 12)} />
-          <HomepageTitle title='Desi MMS' />
-          <Videos data={shuffle(desiMmsVideoArray).slice(0, 12)} /> */}
 
-          {/* <HomepageTitle title='Popular Porn Videos' />
-          <Videos data={video_collection[2].slice(0, 12)} />
           <HomepageTitle title='Trending Porn Videos' />
-          <Videos data={video_collection[0].slice(0, 12)} /> */}
-          {/* <HomepageTitle title='Upcoming Porn Videos' />
+          <Videos data={video_collection[0].slice(0, 15)} />
+          <HomepageTitle title='Upcoming Porn Videos' />
           <Videos data={video_collection[1]} />
           <HomepageTitle title='New Porn Videos' />
-          <Videos data={video_collection[3]} /> */}
+          <Videos data={video_collection[3]} />
 
         </div>
       </main>
@@ -189,8 +204,8 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
         <MultiformatAds />
         <Outstreams />
         <a className='' href="https://www.fuckvideo.live/">.</a>
-          <a className='' href="https://www.chutlunds.com/">.</a>
-          <a className='' href="https://www.desikahaniya.in/">.</a>
+        <a className='' href="https://www.chutlunds.com/">.</a>
+        <a className='' href="https://www.desikahaniya.in/">.</a>
       </footer>
     </div>
   )
