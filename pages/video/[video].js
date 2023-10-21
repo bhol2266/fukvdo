@@ -49,7 +49,8 @@ function Videoplayer() {
         setVideoTitleBackUp(title)
         const fetchVideoDetails = async () => {
 
-            let api=`https://fuckvideo.live/api/spangbang/videoPlayer`
+            // let api=`https://fuckvideo.live/api/spangbang/videoPlayer`
+            let api=`http://localhost:3000/api/spangbang/videoPlayer`
             // let api=`https://clownfish-app-jn7w9.ondigitalocean.app/getVideoPageDetails`
 
             const rawResponse = await fetch(api, {
@@ -150,7 +151,7 @@ function Videoplayer() {
     if (spinnerLoading) {
         return (
             <div className="flex justify-center mx-auto mt-10 h-screen mt-[100px]">
-                <BeatLoader loading size={25} color={'#13274F'} />
+                <BeatLoader loading size={25} color={'#900C3F'} />
             </div>
         )
     }
