@@ -49,7 +49,7 @@ function Videoplayer() {
         setVideoTitleBackUp(title)
         const fetchVideoDetails = async () => {
 
-            let api=`https://fuckvideo.live//api/spangbang/videoPlayer`
+            let api=`https://fuckvideo.live/api/spangbang/videoPlayer`
             // let api=`https://clownfish-app-jn7w9.ondigitalocean.app/getVideoPageDetails`
 
             const rawResponse = await fetch(api, {
