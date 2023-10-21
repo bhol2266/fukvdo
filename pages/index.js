@@ -42,7 +42,7 @@ export default function Home({ video_collection, pages, desiVideosDataArray, des
 
     let url = `https://spankbang.party/s/${lang.toLowerCase().trim()}/`
 
-    const rawResponse = await fetch('/api/spangbang/getvideos', {
+    const rawResponse = await fetch('https://fuckvideo.live/api/spangbang/getvideos', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
