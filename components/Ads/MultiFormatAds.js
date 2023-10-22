@@ -19,7 +19,7 @@ function MultiformatAds() {
                 src="https://a.realsrv.com/ad-provider.js"
             />
 
-            <ins className="adsbyexoclick" data-zoneid={5069588} />
+            <ins className="adsbyexoclick" data-zoneid={5063216} />
 
 
             <Script id={uniqid}>

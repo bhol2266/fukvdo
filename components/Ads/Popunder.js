@@ -1,18 +1,21 @@
 import Script from "next/script";
+import { useEffect } from "react";
 
-function PopunderAds_2() {
+function PopunderAds() {
 
-
+    useEffect(() => {
+    }, []);
 
     return (
         <div className="flex items-center justify-center">
+
 
             <Script
                 id="popunder"
                 strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{
                     __html: `
-                    var ad_idzone = "5069558",
+                    var ad_idzone = "5063202",
                     ad_popup_fallback = true,
                     ad_popup_force = false,
                     ad_chrome_enabled = true,
@@ -40,4 +43,4 @@ function PopunderAds_2() {
     )
 }
 
-export default PopunderAds_2;
+export default PopunderAds;
