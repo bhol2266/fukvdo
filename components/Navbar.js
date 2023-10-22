@@ -350,16 +350,16 @@ function Navbar() {
             <div className='flex justify-around items-center mb-1 bg-red-100 shadow-lg lg:hidden font-arial px-2'>
 
                 <Link href='/'>
-                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme   text-center p-1 hover:text-red-600  '>Home</p>
+                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme   text-center p-1 hover:text-black  '>Home</p>
                 </Link>
 
                 <Link href='/category'>
-                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme  text-center p-1 hover:text-red-600  '>Catergories</p>
+                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme  text-center p-1 hover:text-black  '>Catergories</p>
                 </Link>
 
         
                 <Link href='https://play.google.com/store/apps/details?id=com.bhola.livevideochat&hl=en-IN'>
-                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme  text-center p-1 hover:text-red-600 '>Sex Chat</p>
+                    <p className=' sm:text-xl xl:text-[28px] text-md text-theme  text-center p-1 hover:text-black '>Sex Chat</p>
                 </Link>
 
 
@@ -490,7 +490,7 @@ function Navbar() {
                         return (
                             <Link href={item.href} key={item.name}>
 
-                                <p key={item.name} className='text-xl 2xl:text-2xl font-semibold cursor-pointer p-1 hover:text-red-400'>{item.name}</p>
+                                <p key={item.name} className='text-xl 2xl:text-2xl font-semibold cursor-pointer p-1 hover:text-black'>{item.name}</p>
                             </Link>
                         )
                     })}
