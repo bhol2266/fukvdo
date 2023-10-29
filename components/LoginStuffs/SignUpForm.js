@@ -125,7 +125,7 @@ export const SignUpForm = () => {
 
 
                 <h2 className=' mt-[20px] text-[#323232]  text-[20px] font-inter font-medium mb-6'>
-                    Join Chutlunds for free
+                    Join FuckVideo for free
                 </h2>
 
 
@@ -190,7 +190,7 @@ export const SignUpForm = () => {
                     </div>
 
                     {/* Bottom */}
-                    <h2 className='text-center w-full text-[#323232]  font-inter text-[12px] mt-[26px]'>By continuing, you agree to Chutlunds&apos;s
+                    <h2 className='text-center w-full text-[#323232]  font-inter text-[12px] mt-[26px]'>By continuing, you agree to FuckVideo&apos;s
                         Terms of Use and Privacy Policy.
                     </h2>
 

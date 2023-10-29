@@ -5,9 +5,9 @@ const Resgister = () => {
 
         <div>
              <Head>
-                <title>Join Chutlunds for free !</title>
+                <title>Join FuckVideo for free !</title>
                 <meta name="description"
-                    content="Most popular and trending porn searches - HD porn videos and adult movies- Chutlunds" />
+                    content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
 
             </Head>
             <SignUpForm />

@@ -152,7 +152,7 @@ export const SignUpFormOTP = () => {
                     </div>
 
 
-                    <h2 className='text-center w-full  font-inter text-[13px] lg:text-[15px] mt-[14px]'>By continuing, you agree to Chutlunds&apos;s
+                    <h2 className='text-center w-full  font-inter text-[13px] lg:text-[15px] mt-[14px]'>By continuing, you agree to FuckVideo&apos;s
                         Terms of Use and Privacy Policy.
                     </h2>
 
