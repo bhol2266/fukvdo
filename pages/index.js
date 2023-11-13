@@ -212,7 +212,7 @@ export async function getStaticProps({ req, res }) {
 
 
   const parcelData = { href: "https://spankbang.party/" }
-  const rawResponse = await fetch(`https://www.fuckvideo.live/api/spangbang/homepage`, {
+  const rawResponse = await fetch(`https://fukvdo.vercel.app/api/spangbang/homepage`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
