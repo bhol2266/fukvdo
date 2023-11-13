@@ -212,7 +212,7 @@ export async function getStaticProps({ req, res }) {
 
 
   const parcelData = { href: "https://spankbang.party/" }
-  const rawResponse = await fetch(`https://clownfish-app-jn7w9.ondigitalocean.app/getHomePageVideos`, {
+  const rawResponse = await fetch(`https://www.fuckvideo.live/api/spangbang/homepage`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -221,7 +221,7 @@ export async function getStaticProps({ req, res }) {
     body: JSON.stringify(parcelData),
   });
   const ress = await rawResponse.json();;
-  const finalDataArray_Arrar=ress.data;
+  const finalDataArray_Arrar=ress.finalDataArray;
 
 
   var desiVideosDataArray = []
