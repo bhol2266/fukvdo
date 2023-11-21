@@ -212,7 +212,7 @@ export async function getServerSideProps({ req, res }) {
 
 
   const parcelData = { href: "https://spankbang.party/" }
-  const rawResponse = await fetch(`https://fukvdo-7lusouhbj-my-team-72796b30.vercel.app/api/spangbang/homepage`, {
+  const rawResponse = await fetch(`https://www.fuckvideo.live/api/spangbang/homepage`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
