@@ -212,7 +212,7 @@ export async function getServerSideProps({ req, res }) {
 
 
   const parcelData = { href: "https://spankbang.party/" }
-  const rawResponse = await fetch(`https://chutlunds.com/api/spangbang/homepage`, {
+  const rawResponse = await fetch(`http://localhost:3000/api/spangbang/homepage`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'

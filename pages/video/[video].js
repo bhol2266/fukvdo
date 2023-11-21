@@ -49,7 +49,7 @@ function Videoplayer() {
         setVideoTitleBackUp(title)
         const fetchVideoDetails = async () => {
 
-            let api=`https://chutlunds.com/api/spangbang/videoPlayer`
+            let api=`/api/spangbang/videoPlayer`
             // let api=`http://localhost:3000/api/spangbang/videoPlayer`
             // let api=`https://clownfish-app-jn7w9.ondigitalocean.app/getVideoPageDetails`
 
