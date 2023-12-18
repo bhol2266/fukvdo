@@ -8,6 +8,7 @@ module.exports = {
       banner_wide: "url('/homepageImages/banner-wide.png')",
     },
     extend: {
+      
       aspectRatio: {
         'custom': '16 / 11',
       },

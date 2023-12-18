@@ -102,11 +102,17 @@ export default Category
 
 export async function getServerSideProps(context) {
 
+  const { req, res } = context;
+
   const { searchkey } = context.query;
   var finalDataArray = []
   var pages = []
 
 
+  context.res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+)
   const obj = await scrapeVideos(`https://spankbang.party/s/${searchkey.toLowerCase().trim()}/?o=all`)
   finalDataArray = obj.finalDataArray
   pages = obj.pages
