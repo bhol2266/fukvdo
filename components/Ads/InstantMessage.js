@@ -24,19 +24,6 @@ function InstantMessageAds() {
         <div className={`max-w-full`}>
 
 
-            <Head>
-                {/* <script type="application/javascript" src="https://syndication.realsrv.com/splash.php?idzone=4580188&capping=0"></script>
-
- */}
-
-
-                {/* <script type="application/javascript" src="https://syndication.realsrv.com/splash.php?idzone=4813390"></script> */}
-
-            </Head >
-
-            <Script async src="https://a.magsrv.com/ad-provider.js" />
-            <ins className="eas6a97888e" data-zoneid="5063204"></ins>
-
 
 
 

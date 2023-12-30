@@ -13,18 +13,7 @@ function MultiformatAds() {
     return (
         <div className="bg-white  overflow-hidden mx-auto w-[350px] lg:w-[700px] xl:w-[900px]  my-2">
 
-            <Script
-                id={uniqid + "sadfdsa"}
-                strategy="beforeInteractive"
-                src="https://a.realsrv.com/ad-provider.js"
-            />
-
-            <ins className="adsbyexoclick" data-zoneid={5063216} />
-
-
-            <Script id={uniqid}>
-                {`(AdProvider = window.AdProvider || []).push({"serve": { }});`}
-            </Script>
+           
 
 
         </div>

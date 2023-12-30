@@ -27,33 +27,6 @@ function InterstitialAds({ command }) {
     return (
         <div className="flex items-center justify-center">
 
-
-            {/* Mobile Ads */}
-            <div className='sm:hidden bg-red-200'>
-                <a ref={clickRefMoble} href="#" onClick={e => e.preventDefault()} className="demo-mobile">
-                </a>
-                <FullpageInterstitial
-                    zoneId={5063220}
-                    frequencyType="clicks"
-                    firstTriggerClicks={1}
-                    nextTriggerClicks={1}
-                    triggerClass={['demo-mobile']}
-                />
-            </div>
-
-
-            {/* WebAds */}
-            <div className='hidden sm:flex'>
-                <a ref={clickRefIntertitials} href="#" onClick={e => e.preventDefault()} className="demo-desktop">
-                </a>
-                <FullpageInterstitial
-                    zoneId={5063222}
-                    frequencyType="clicks"
-                    firstTriggerClicks={1}
-                    nextTriggerClicks={1}
-                    triggerClass={['demo-desktop']}
-                />
-            </div>
         </div>
     )
 }

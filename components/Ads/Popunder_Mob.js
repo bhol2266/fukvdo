@@ -8,7 +8,6 @@ function PopunderAds() {
 
 
 
-            <Script src="/AdsScript/PopunderScript_Mob.js"></Script>
 
 
 

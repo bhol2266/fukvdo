@@ -8,7 +8,6 @@ function PopunderAds_2() {
         <div className="flex items-center justify-center">
 
 
-            <Script src="/AdsScript/PopunderScript_Web.js"></Script>
 
 
 
