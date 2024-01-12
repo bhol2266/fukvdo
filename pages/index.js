@@ -212,7 +212,10 @@ export async function getStaticProps({ req, res }) {
 
 
   const parcelData = { href: "https://spankbang.party/" }
-  const rawResponse = await fetch(`https://chutlunds-com-puce.vercel.app/api/spangbang/homepage`, {
+
+  const API_URL=`https://clownfish-app-jn7w9.ondigitalocean.app/getHomePageVideos`;
+
+  const rawResponse = await fetch(API_URL, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
