@@ -25,8 +25,6 @@ function MyApp({ Component, pageProps }) {
     <>
 
       <Head>
-        <meta name='asg_verification' content='vVcWCcbbgmnqv221hpAjPojb' />
-        <meta name="exoclick-site-verification" content="6b1112fe173bdf782d96975e70bd4b95"></meta>
         <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -38,7 +36,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
 
         {/* Ads Netword Verification  */}
-        <meta name="6a97888e-site-verification" content="80bd73765fca365d8238dc1ccbdd975f"></meta>
         <meta name="clckd" content="f4f7556a2f970596698f7783f21dd137" />
 
       </Head>
