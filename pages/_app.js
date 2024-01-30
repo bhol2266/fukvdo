@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }) {
         <SignUpForm/>
         <SignUpFormOTP/>
         <PasswordReset/> */}
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='basicMargin '>
           <Component {...pageProps} />
         </div>
