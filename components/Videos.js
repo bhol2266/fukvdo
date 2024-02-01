@@ -16,7 +16,7 @@ import {
 } from '@heroicons/react/solid';
 import MultiformatAds from "./Ads/MultiFormatAds";
 import InstantMessageAds from "./Ads/InstantMessage";
-import PopunderAds from "./Ads/Popunder_Mob";
+import PopunderAds from "./Ads/Popunder";
 
 function Videos({ data }) {
 

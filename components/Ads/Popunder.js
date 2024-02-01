@@ -1,15 +1,12 @@
 import Script from "next/script";
 
-function PopunderAds_2() {
+function Popunder() {
 
-    console.log("im herre");
 
     var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
     var uniqid = randLetter + Date.now();
     return (
         <div className="flex items-center justify-center">
-
-
 
             <Script
                 id={uniqid}
@@ -30,11 +27,8 @@ function PopunderAds_2() {
                 onError={() => qgmjc()}
             /> 
 
-
-
-
         </div>
     )
 }
 
-export default PopunderAds_2;
+export default Popunder;

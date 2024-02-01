@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head'
 import Outstreams from '../../components/Ads/Outstream';
 import MultiformatAds from '../../components/Ads/MultiFormatAds';
-import Popunder_Web from '../../components/Ads/Popunder_Web';
+import Popunder from '../../components/Ads/Popunder';
 
 function Search({ tags }) {
 
@@ -90,7 +90,7 @@ function Search({ tags }) {
             </Head>
 
             <Outstreams />
-            <Popunder_Web />
+            <Popunder />
             <MultiformatAds />
 
 
