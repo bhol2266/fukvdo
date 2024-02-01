@@ -1,12 +1,9 @@
+import Head from 'next/head';
 import { useRouter } from "next/router";
+import PaginationQuery from '../../components/PaginationQuery';
 import Sidebar from "../../components/Sidebar";
 import Videos from "../../components/Videos";
-import Header from '../../components/searchPage/Header'
-import { useContext, useState } from 'react';
-import videosContext from '../../context/videos/videosContext';
-import Router from 'next/router'
-import Head from 'next/head'
-import PaginationQuery from '../../components/PaginationQuery';
+import Header from '../../components/searchPage/Header';
 import { scrapeVideos } from '../../config/spangbang';
 
 function Category({ video_collection, pages, query, keyword, currentPage, filteredObjsArray }) {

@@ -1,11 +1,11 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import jsonData from "../../JsonData/categoryImages/data.json"
-import Link from 'next/link'
+import jsonData from "../../JsonData/categoryImages/data.json";
 
-import Outstreams from '../../components/Ads/Outstream';
-import Head from 'next/head'
+import Head from 'next/head';
 import MultiformatAds from '../../components/Ads/MultiFormatAds';
+import Outstreams from '../../components/Ads/Outstream';
 import PopunderAds from '../../components/Ads/PopunderAds';
 
 

@@ -1,12 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { Menu, Transition } from '@headlessui/react';
 import {
-    ThumbUpIcon, ClockIcon, FilmIcon, EyeIcon, PlusIcon, MinusIcon, CogIcon, InformationCircleIcon, DownloadIcon
+    ClockIcon,
+    CogIcon,
+    EyeIcon,
+    MinusIcon,
+    PlusIcon,
+    ThumbUpIcon
 } from '@heroicons/react/solid';
-import Router, { useRouter } from "next/router";
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import { setCookie } from "cookies-next";
+import { useRouter } from "next/router";
 import Script from "next/script";
-import { getCookie, setCookie } from "cookies-next";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')

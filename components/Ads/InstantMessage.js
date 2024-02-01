@@ -1,9 +1,6 @@
-import { Banner } from "exoclick-react";
-import { useContext, useEffect, useState } from 'react';
-import videosContext from '../../context/videos/videosContext';
 import Script from "next/script";
-import { Outstream, Placeholder } from "exoclick-react";
-import Head from "next/head";
+import { useContext, useEffect } from 'react';
+import videosContext from '../../context/videos/videosContext';
 
 
 function InstantMessageAds() {

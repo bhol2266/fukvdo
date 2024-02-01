@@ -1,8 +1,3 @@
-import { Banner } from "exoclick-react";
-import { useContext } from 'react';
-import videosContext from '../../context/videos/videosContext';
-import Script from "next/script";
-import Head from "next/head";
 
 
 function MultiformatAds() {

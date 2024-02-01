@@ -1,11 +1,10 @@
+import Head from 'next/head';
 import { useRouter } from "next/router";
+import { BeatLoader } from 'react-spinners';
+import Pagination from '../../../../components/Pagination';
 import Sidebar from '../../../../components/Sidebar';
 import Videos from "../../../../components/Videos";
-import Header from '../../../../components/searchPage/Header'
-import Head from 'next/head'
-import { BeatLoader } from 'react-spinners';
-import Link from 'next/link'
-import Pagination from '../../../../components/Pagination';
+import Header from '../../../../components/searchPage/Header';
 import { scrapeVideos } from '../../../../config/spangbang';
 
 

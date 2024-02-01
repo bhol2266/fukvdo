@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from 'react';
-import Script from 'next/script'
+import Script from 'next/script';
+import { useEffect, useState } from 'react';
 
 
 function Outstreams() {

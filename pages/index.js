@@ -1,19 +1,19 @@
-import Head from 'next/head'
-import { useContext, useEffect, useState } from 'react'
+import Head from 'next/head';
+import { useContext, useEffect, useState } from 'react';
 
+import { deleteCookie, getCookie, setCookie } from "cookies-next";
+import { useRouter } from 'next/router';
+import React from 'react';
+import MultiformatAds from '../components/Ads/MultiFormatAds';
+import Outstreams from '../components/Ads/Outstream';
+import PopunderAds from '../components/Ads/PopunderAds';
+import HomepageTitle from '../components/HomepageTitle';
 import Sidebar from '../components/Sidebar';
 import Videos from '../components/Videos';
-import React from 'react'
-import videosContext from '../context/videos/videosContext'
 import Category_slider from '../components/category_slider';
-import HomepageTitle from '../components/HomepageTitle';
 import { getLanguge } from '../config/getLanguge';
-import { useRouter } from 'next/router';
-import { getCookie, deleteCookie, setCookie } from "cookies-next";
-import Outstreams from '../components/Ads/Outstream';
-import MultiformatAds from '../components/Ads/MultiFormatAds';
-import PopunderAds from '../components/Ads/PopunderAds';
 import { scrapeVideos } from '../config/spangbang';
+import videosContext from '../context/videos/videosContext';
 
 export default function Home({ video_collection, pages, desiVideosDataArray, desiMmsVideoArray }) {
 

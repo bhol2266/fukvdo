@@ -1,4 +1,3 @@
-import { FullpageInterstitial } from "exoclick-react";
 import { useEffect, useRef } from "react";
 
 
