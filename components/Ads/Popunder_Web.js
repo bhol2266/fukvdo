@@ -8,7 +8,6 @@ function PopunderAds_2() {
     var uniqid = randLetter + Date.now();
     return (
         <div className="flex items-center justify-center">
-            <a href="/rough">safdsa</a>
 
 
 
