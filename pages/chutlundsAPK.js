@@ -1,7 +1,6 @@
-import { StarIcon, ChevronRightIcon } from '@heroicons/react/solid'
-import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { StarIcon } from '@heroicons/react/solid';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 
 

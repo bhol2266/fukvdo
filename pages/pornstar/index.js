@@ -1,18 +1,12 @@
+import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link'
-import Head from 'next/head'
-import { listAll, ref, getDownloadURL } from "firebase/storage";
-import { BeatLoader } from 'react-spinners';
+import React, { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 // import pornstarNameList from '../../JsonData/pornstarlist/AllpornstarNames.json'
-import pornstarNameList from '../../JsonData/pornstarlist/alldata.json'
-import {
-    ThumbUpIcon, ClockIcon, FilmIcon, EyeIcon, PlusIcon, MinusIcon, CogIcon
-} from '@heroicons/react/solid';
-import Outstreams from '../../components/Ads/Outstream';
-import Popunder from '../../components/Ads/Popunder';
+import pornstarNameList from '../../JsonData/pornstarlist/alldata.json';
 import MultiformatAds from '../../components/Ads/MultiFormatAds';
+import Outstreams from '../../components/Ads/Outstream';
 
 function Index() {
 
@@ -102,7 +96,6 @@ function Index() {
             </div> */}
 
             <Outstreams />
-            <Popunder />
             <MultiformatAds />
 
             <h2 className='flex-grow text-lg  my-1 p-2 font-semibold font-inter'>Trending Pornstars</h2>

@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 import { getCookie, deleteCookie, setCookie } from "cookies-next";
 import Outstreams from '../components/Ads/Outstream';
 import MultiformatAds from '../components/Ads/MultiFormatAds';
-import PopunderAds from '../components/Ads/Popunder';
+import PopunderAds from '../components/Ads/PopunderAds';
 import { scrapeVideos } from '../config/spangbang';
 
 export default function Home({ video_collection, pages, desiVideosDataArray, desiMmsVideoArray }) {

@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-function Popunder() {
+function PopunderAds() {
 
 
     var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
@@ -31,4 +31,4 @@ function Popunder() {
     )
 }
 
-export default Popunder;
+export default PopunderAds;
