@@ -13,9 +13,8 @@ function MultiformatAds() {
     return (
         <div className="bg-white  overflow-hidden mx-auto w-[350px] lg:w-[700px] xl:w-[900px]  my-2">
 
-           
 
-
+            <script data-cfasync="false" type="text/javascript" src="//t7cp4fldl.com/lv/esnk/2010930/code.js" async className="__clb-2010930"></script>
         </div>
     )
 }
