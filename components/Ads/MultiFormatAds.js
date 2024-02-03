@@ -6,12 +6,22 @@ function MultiformatAds() {
     var uniqid = randLetter + Date.now();
 
     return (
-        <div className="bg-white  overflow-hidden mx-auto w-[350px] lg:w-[700px] xl:w-[900px]  my-2">
+        <div className="">
 
+            <Script
+                type="text/javascript"
+                src="//cdn.tsyndicate.com/sdk/v1/bi.js"
+                data-ts-spot="f5d2c5a9866d46d092156555c188ab05"
+                data-ts-width="300"
+                data-ts-height="250"
+                data-ts-extid="{extid}"
+                async
+                defer
+            />
 
-            <script data-cfasync="false" type="text/javascript" src="//t7cp4fldl.com/lv/esnk/2010930/code.js" async className="__clb-2010930"></script>
         </div>
     )
+
 }
 
 export default MultiformatAds;
