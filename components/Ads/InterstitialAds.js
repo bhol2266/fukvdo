@@ -20,7 +20,6 @@ function InterstitialAds({ command }) {
     return (
         <div className="flex items-center justify-center">
 
-            <button useRef={clickRefIntertitials} onClick={()=>{alert("im clicked")}}>.</button>
 
             <link
                 rel="stylesheet"
