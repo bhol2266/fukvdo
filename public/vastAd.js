@@ -149,7 +149,7 @@ function autoplayChecksResolved() {
 
   // Request video ads.
   const adsRequest = new google.ima.AdsRequest();
-  adsRequest.adTagUrl = '/your/path/for/videojs_5.vast.vpaid.min.js';
+  adsRequest.adTagUrl = 'https://tsyndicate.com/do2/c13e39b3312c4f45b2134784e089c09f/vast?extid={extid}';
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.

@@ -12,6 +12,7 @@ import VideoPlayer from '../../components/VideoPlayer';
 import Videos from '../../components/Videos';
 // import { getVideoPageData } from '../../config/videoPlayer';
 import { BeatLoader } from 'react-spinners';
+import InterstitialAds from '../../components/Ads/InterstitialAds';
 
 
 function Videoplayer() {
@@ -50,7 +51,7 @@ function Videoplayer() {
         setVideoTitleBackUp(title)
         const fetchVideoDetails = async () => {
 
-            let api=`/api/spangbang/videoPlayer`
+            let api = `/api/spangbang/videoPlayer`
             // let api=`http://localhost:3000/api/spangbang/videoPlayer`
             // let api=`https://clownfish-app-jn7w9.ondigitalocean.app/getVideoPageDetails`
 
@@ -239,13 +240,7 @@ function Videoplayer() {
                             <Videos data={latestVideo} />
                         }
                         <MultiformatAds />
-                        {/* {countryVideo.length !== 0 &&
-                        <Videos data={countryVideo} />
-                    }
-
-                    <MultiformatAds />
-                    <MultiformatAds />
-               */}
+                        <InterstitialAds />
 
                     </div>
                 }
