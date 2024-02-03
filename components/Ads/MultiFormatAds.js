@@ -1,4 +1,4 @@
-
+import Script from "next/script";
 
 function MultiformatAds() {
 
