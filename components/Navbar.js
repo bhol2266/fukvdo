@@ -363,7 +363,7 @@ function Navbar() {
 
             </div>
 
-            <div className='flex justify-around items-center shadow-lg lg:hidden font-arial shadow-lg shadow-semiblack'>
+            <div className='flex justify-around items-center lg:hidden font-arial shadow-lg  mb-2'>
                 <Link href='/'>
 
                     <p className={`sm:text-xl xl:text-[28px] text-md text-white text-center p-1  border-b-[3px] ${currentPath === '/' ? 'border-theme_yellow' : 'hover:border-theme_yellow border-transparent'}`}>
@@ -393,9 +393,6 @@ function Navbar() {
                     </p>
                 </Link>
             </div>
-            {/* <hr className="w-full mt-3 border-t border-gray-400 sm:hidden" /> */}
-
-
 
             {/* Large Sreeen NavBar  */}
 

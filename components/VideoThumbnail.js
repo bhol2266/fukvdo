@@ -84,15 +84,15 @@ function VideoThumbnail({ details, type }) {
 
                     <div className="flex items-center justify-start w-full pl-0.5 sm:pl-1 md:pb-2 lg:pl-2 font-arial -mt-1 lg:-mt-1.5">
                         <div className="flex items-center">
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px] text-gray-400  font-inter'>{video.views} Views</p>
+                            <p className='text-[13px] md:text-[15px] xl:text-[16px] text-gray-400  font-inter'>{video.views} Views</p>
                         </div>
                         <div className="flex items-center ml-3">
                             <img className="w-[15px] h-[15px]  xl:w-[22px] xl:h-[22px]" src='/icons/thumb.png' alt="Likes" />
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter sm:ml-1 xl:ml-2 text-gray-400'>{video.likePercentage}</p>
+                            <p className='text-[13px] md:text-[15px] xl:text-[16px]  font-inter sm:ml-1 xl:ml-2 text-gray-400'>{video.likePercentage}</p>
                         </div>
                         <div className="hidden sm:flex items-center ml-2">
                             <ClockIcon className="icon  w-[15px] h-[15px] xl:w-[25px] xl:h-[25px] text-gray-400" />
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter text-gray-400'>{video.uploadedTime}</p>
+                            <p className='text-[13px] md:text-[15px] xl:text-[16px]  font-inter text-gray-400'>{video.uploadedTime}</p>
                         </div>
                     </div>
                 </div>

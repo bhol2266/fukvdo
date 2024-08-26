@@ -196,7 +196,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
       </Head>
 
 
-      <div className='flex justify-between items-center pt-4 md:hidden basicMargin'>
+      <div className='flex justify-between items-center pt-2 md:hidden basicMargin'>
         <span className='text-[20px]  font-semibold  font-inter text-white '>Trending Channels</span>
         <img
           className='h-[20px] w-[20px] cursor-pointer sm:hidden'
