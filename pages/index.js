@@ -211,7 +211,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
       <div className="w-full overflow-x-auto whitespace-nowrap py-2 scrollbar-hide md:hidden select-none">
         {tags.map((tag, index) => (
           <Link legacyBehavior key={tag.tag} href={`/search/${tag.tag.trim()}`} passHref>
-            <a className="bg-neutral-600 hover:text-semiblack  px-3 py-1.5 rounded-lg m-1 ml-2 inline-block text-sm hover:bg-gray-300">
+            <a className="bg-neutral-600 hover:text-semiblack  px-3 py-1.5 rounded-lg m-1 ml-2 inline-block text-sm hover:bg-gray-100 font-inter">
               {tag.tag}
             </a>
           </Link>

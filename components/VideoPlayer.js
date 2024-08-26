@@ -14,6 +14,7 @@ import Script from "next/script";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { FaImages } from "react-icons/fa";
 import { UserAuth } from "../context/AuthContext";
+import { BsBadgeHdFill } from "react-icons/bs";
 
 
 
@@ -154,7 +155,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
     return (
 
-        <div >
+        <div className='3xl:w-3/5'>
 
             <Script
                 src="//imasdk.googleapis.com/js/sdkloader/ima3.js"
@@ -165,7 +166,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                 }}
             />
 
-            <div id="mainContainer" className={`relative w-full aspect-video object-contain  group  shadow-2xl`}>
+            <div id="mainContainer" className={`relative w-full aspect-video object-contain  group  shadow-2xl `}>
                 <video className={`w-full h-full cursor-pointer`} id="contentElement" onContextMenu={(e) => e.preventDefault()} ref={videoPlayerRef} poster={video_details.thumbnail} width="852" height="480" controls controlsList="nodownload"
                 >
                     <source src={VideoSrc} type="video/mp4" />
@@ -241,31 +242,33 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                                 leaveFrom="transform opacity-100 scale-100"
                                 leaveTo="transform opacity-0 scale-95"
                             >
-                                <Menu.Items className="z-50 origin-top-right absolute right-0 bottom-11 mt-2 w-[80px] rounded-md shadow-lg  bg-gray-200  navbar">
+                                <Menu.Items className="z-50 origin-top-right absolute right-0 bottom-11 mt-2 w-[82px] lg:w-[100px] rounded-md shadow-lg  bg-neutral-600  navbar">
                                     <div className=" rounded">
 
                                         {videolink_qualities_screenshots.video_qualities_available.map(quality => {
                                             return (
                                                 <Menu.Item key={quality} onClick={() => { menuItemOnClick(quality) }}>
                                                     {({ active }) => (
-                                                        <div className='hover:bg-gray-300 hover:shadow-lg hover:rounded'>
-                                                            <div className={`${quality === Quality ? "text-red-500" : ""} relative px-4  w-fit flex items-center justify-between`}>
+                                                        <div className={`relative px-4  w-fit flex items-center justify-between hover:bg-neutral-400 hover:shadow-lg hover:rounded`}>
 
-                                                                <LockClosedIcon className={`${quality === '1080p' || quality === '4k' ? "hidden" : "hidden"} h-3 text-gray-600 absolute top-3 left-0.5`} />
-                                                                <a
-                                                                    href="#"
-                                                                    className={classNames(
-                                                                        active ? ' ' : '',
-                                                                        'block   py-2 text-sm font-semibold  text-left '
-                                                                    )}
-                                                                >
-                                                                    {quality}
-                                                                </a>
-                                                                <p className={`${quality === '720p' || quality === '1080p' || quality === '4k' ? "" : "hidden"} text-[10px] bg-red-500 rounded text-white absolute -right-[1px] bottom-3 px-[2px] scale-75 `}>HD</p>
-                                                            </div>
+                                                            <a
+                                                                href="#"
+                                                                className={classNames(
+                                                                    quality === Quality ? "font-bold text-theme_yellow" : "font-normal text-white",
+                                                                    'block py-2 text-sm lg:text-lg text-right mr-1'
+                                                                )}
+                                                            >
+                                                                {quality}
+                                                            </a>
+
+                                                            <BsBadgeHdFill className={`${quality === '720p' || quality === '1080p' || quality === '4k' ? "" : "hidden"} text-red-500   scale-125`} />
+
                                                         </div>
                                                     )}
                                                 </Menu.Item>
+
+
+
                                             )
                                         })}
                                     </div>
@@ -302,6 +305,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                         </div>
                     </div>
                 }
+                {/* <a className="bg-neutral-600 hover:text-semiblack  px-3 py-1.5 rounded-lg m-1 ml-2 inline-block text-sm hover:bg-gray-100 font-inter"> */}
 
 
                 {/* Tags */}
@@ -312,7 +316,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                                 return (
                                     <Link key={key} href={`/search/${key.trim()}`} passHref>
-                                        <p className="text-xs border-[1px] border-[#9499A8] text-gray-300 px-2 py-1 rounded-lg m-1 inline-block lg:text-sm hover:text-white hover:border-white">
+                                        <p className="text-xs border-[1px] border-[#9499A8] text-gray-300 px-2 py-1 rounded-lg m-1 inline-block lg:text-sm  hover:bg-gray-100 font-inter hover:text-semiblack">
                                             {key}
                                         </p>
                                     </Link>
@@ -341,7 +345,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                     </div>
                     }
 
-              
+
 
                 </div>
 
@@ -352,7 +356,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                     <div className='flex items-center'>
 
-                        <FaImages  className='h-[20px] w-[20px] mx-3 text-semiblack'/>
+                        <FaImages className='h-[20px] w-[20px] mx-3 text-semiblack' />
                         <p className='font-inter  text-md  text-center py-1 text-semiblack'>Screenshots</p>
                     </div>
                     <PlusIcon className={`icon text-semiblack hover:scale-100 ${PlusVisible}`} />

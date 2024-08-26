@@ -140,7 +140,7 @@ const Videoplayer = () => {
     if (spinnerLoading) {
         return (
             <div className="flex justify-center mx-auto mt-10 h-screen mt-[100px]">
-                <BeatLoader loading size={25} color={'#232b2b'} />
+                <BeatLoader loading size={25} color={'#D3D3D3'} />
             </div>
         );
     }
@@ -174,7 +174,7 @@ const Videoplayer = () => {
 
            
 
-                    <h1 className='text-md sm:text-lg text-white  text-wrap mt-4  mb-2 md:text-2xl font-inter basicMargin'>{videoDetails.Title}</h1>
+                    <h1 className='text-md sm:text-lg text-white  text-wrap mt-2 lg:mt-4   md:text-2xl font-inter basicMargin'>{videoDetails.Title}</h1>
 
                     <div className='py-1 rounded overflow-hidden sm:cursor-pointer md:w-4/5'>
                         <VideoPlayer
