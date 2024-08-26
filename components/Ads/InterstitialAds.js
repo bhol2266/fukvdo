@@ -8,40 +8,21 @@ const InterstitialAds = () => {
             <Head>
                 <link rel="stylesheet" href="//cdn.tsyndicate.com/sdk/v1/interstitial.ts.css" />
             </Head>
-            {/* <Script
+            <Script
                 src="//cdn.tsyndicate.com/sdk/v1/interstitial.ts.js"
                 strategy="afterInteractive"
                 onLoad={() => {
                     InterstitialTsAd({
-              spot: "c398381ddfb042828ce4a081508161c9",
+                        spot: "c398381ddfb042828ce4a081508161c9",
                         extid: "{extid}",
                         cookieExpires: 1
-                        
+
                     });
                 }}
-            /> 
+            />
             <div id="interstitial-ad"></div>
 
-*/}
 
-
-            {/* Exoclick Interstitial ads  */}
-
-            <Script
-                async
-                type="application/javascript"
-                src="https://a.pemsrv.com/ad-provider.js"
-                strategy="afterInteractive" // Ensures the script runs after the page is interactive
-            />
-            <Script
-                id="ad-provider-init"
-                strategy="afterInteractive" // Ensures this script runs after the external script
-            >
-                {`
-        (window.AdProvider = window.AdProvider || []).push({ "serve": {} });
-      `}
-            </Script>
-            <ins className="eas6a97888e35" data-zoneid="5390762"></ins>
 
         </>
     );

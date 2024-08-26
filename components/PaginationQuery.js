@@ -53,7 +53,7 @@ const PaginationQuery = ({ data }) => {
     }
 
     return (
-        <div className="mt-8">
+        <div className="mt-8 mb-2">
 
             <div className={`${parseInt(currentPageNumberURL) === 1 || parseInt(currentPageNumberURL) === parseInt(pages[pages.length - 2]) ? "justify-around" : "justify-between"} flex items-center   md:justify-center`}>
 
