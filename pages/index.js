@@ -197,7 +197,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
 
 
       <div className='flex justify-between items-center pt-2 md:hidden basicMargin'>
-        <span className='text-[20px]  font-semibold  font-inter text-white '>Trending Channels</span>
+        <span className='text-[18px]   font-inter text-gray-300 '>Trending Channels</span>
         <img
           className='h-[20px] w-[20px] cursor-pointer sm:hidden'
           src={viewType === 'horizontal' ? './grid.png' : './horizontal.png'}
@@ -218,11 +218,11 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
         ))}
       </div>
 
-      <main className="flex-row flex  mt-1 md:mt-6 md:space-x-3">
-        <Sidebar />
+      <main className="flex-row flex  mt-1 md:mt-2 md:space-x-3">
+        {/* <Sidebar /> */}
         <div className='w-full overflow-hidden'>
           <Outstreams />
-          <h1 className="lg:text-2xl text-lg font-semibold text-gray-300 my-3 font-inter basicMargin w-fit border-b-[3px] border-theme_yellow">Trending Free Porn Videos</h1>
+          <h1 className="lg:text-xl text-lg  text-gray-300 my-3 font-inter basicMargin w-fit border-b-[3px] border-theme_yellow">Trending Free Porn Videos</h1>
           <Videos data={video_collection[0].finalDataArray} />
           <ShowMore href={"/trending"} alt={"Trending Free Porn Videos"} />
 

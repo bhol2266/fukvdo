@@ -70,7 +70,7 @@ function MyApp({ Component, pageProps }) {
           <Navbar />
           <Banner_for_chutlund2 />
           <LoginModal />
-          <div className={`${currentRoute == "/membership" ? "" : "lg:w-11/12 lg:mx-auto bg-semiblack"}`}>
+          <div className={`${currentRoute == "/membership" ? "" : "2xl:w-11/12 lg:mx-auto bg-semiblack"}`}>
             <Component {...pageProps} />
           </div>
           <hr />

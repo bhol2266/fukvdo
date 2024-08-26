@@ -250,11 +250,11 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
     return (
 
-        <div className='basicMargin md:ml-6'>
+        <div className='basicMargin lg:ml-4 2xl:ml-6'>
 
             <div className='flex items-center md:pr-10 pt-2 my-1  md:my-2 pl-1'>
                 <div className='flex  '>
-                    <h1 className='text-xl md:text-2xl   font-semibold  font-inter my-1  '>{capitalizeFirstLetter(keyword).replace(/\+/g, " ")} Porn videos</h1>
+                    <h1 className='text-xl md:text-2xl   font-inter my-1  '>{capitalizeFirstLetter(keyword).replace(/\+/g, " ")} Porn videos</h1>
 
                 </div>
                 <p className='text-md md:text-xl  pl-1 pr-1  flex-grow font-inter  text-right  '>{`Page-${pageNumber}`}</p>
@@ -267,7 +267,7 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
                 <div className='flex items-center flex-wrap justify-start space-x-1 md:space-x-2 mb-2 md:mb-0 mr-1'>
                     {Final_filteredArray.map(item => {
                         return (
-                            <div key={item} onClick={() => { removefilter(item) }} className=' text-xs md:text-sm hover:bg-button_hover cursor-pointer bg-button rounded-lg px-2 py-1 flex items-center space-x-1'>
+                            <div key={item} onClick={() => { removefilter(item) }} className=' text-xs md:text-sm hover:bg-red-600 cursor-pointer bg-theme_yellow rounded-lg px-2 py-1 flex items-center space-x-1'>
                                 <p className=' text-white font-inter ' >{item}</p>
                                 <XCircleIcon className='h-4 md:h-6 text-white' />
                             </div>
