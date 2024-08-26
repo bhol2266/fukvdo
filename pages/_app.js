@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/logo.png" />
 
-        
+
         {/* Ads Netword Verification  */}
         <meta name="clckd" content="f4f7556a2f970596698f7783f21dd137" />
       </Head>
@@ -75,8 +75,9 @@ function MyApp({ Component, pageProps }) {
           </div>
           <hr />
           {currentRoute != "/membership" && <Footer />}
-          <BannerAds/>
-          <BannerAds/>
+
+          {currentRoute != "/membership" && <BannerAds />}
+          {currentRoute != "/membership" && <BannerAds />}
         </VideoState>
       </AuthContextProvider>
 

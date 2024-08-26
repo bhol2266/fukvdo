@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ModalMembership from '../components/ModalMembership'
 import videosContext from '../context/videos/videosContext'
-import { setCookie, deleteCookie, getCookie } from "cookies-next";
 
 const features = [
     {
@@ -100,13 +99,14 @@ const Membership = () => {
         <div className='relative h-screen' >
 
             <span className='absolute top-0 text-white text-[30px] m-5 hidden'>{width}</span>
-            <img src="/membership/membership_bg.png" className="-z-10 absolute top-0 left-0 object-cover w-screen h-full brightness-75 " alt="" />
+            <img src="/membership/membership_bg.png" className="-z-10 absolute top-0 left-0 object-cover w-screen h-full brightness-75 " alt="" style={{ zIndex: 1 }}
+            />
 
-            <div className=''>
+            <div className='relative z-10 h-screen'>
 
                 <div className='flex items-center justify-center pt-2 lg:pt-5'>
                     <p className=' align-center text-center font-Dancing font-bold text-white  text-[50px] lg:text-[80px] cursor-pointer lg:text-left select-none'>FuckVideo</p>
-                    <img src="/vip-pass.png" alt="" className='h-[70px] lg:h-[120px] animate-shine' />
+                    <img src="./vip-pass.png" alt="" className='h-[70px] lg:h-[120px] animate-shine' />
                 </div>
 
                 <div className='block mx-auto w-4/5 md:w-3/5 lg:w-[500px] 2xl:w-[600px]'>
@@ -126,8 +126,8 @@ const Membership = () => {
                                 <span className={`font-arial font-semibold text-xs lg:text-sm ml-2 bg-red-500 text-white rounded-md px-1 py-0.5 ${plan.offer.length === 0 ? "hidden" : ""}`}>{plan.offer}</span>
                             </div>
                             <div>
-                                <span className="font-bold font-inter text-lg lg:text-2xl">{plan.price}</span>
-                                <span className="text-sm lg:text-md">/{plan.type}</span>
+                                <span className="font-bold font-inter text-lg lg:text-2xl text-semiblack">{plan.price}</span>
+                                <span className="text-sm lg:text-md text-semiblack">/{plan.type}</span>
                             </div>
                         </div>
                     ))}
@@ -144,8 +144,8 @@ const Membership = () => {
                         return (
                             <div key={obj.img} className=''>
                                 <img src={obj.img} alt="" className='w-[70px] lg:w-[80px] 2xl:w-[90px]  mx-auto mb-6 lg:mb-10' />
-                                <p className='text-semiblack font-semibold font-inter tracking-wider block mx-auto text-center my-1 text-[14px] lg:text-[20px]'>{obj.heading}</p>
-                                <p className='text-semiblack font-thin font-poppins  block mx-auto text-center lg:w-3/4 text-[11px] lg:text-[15px]'>{obj.sub_heading}</p>
+                                <p className='text-white font-semibold font-inter tracking-wider block mx-auto text-center my-1 text-[14px] lg:text-[20px]'>{obj.heading}</p>
+                                <p className='text-white font-thin font-poppins  block mx-auto text-center lg:w-3/4 text-[11px] lg:text-[15px]'>{obj.sub_heading}</p>
                             </div>
 
                         )
