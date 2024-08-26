@@ -152,7 +152,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                     </div>
                 </div>
 
-                <div className={`grid grid-cols-4  sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7 mt-4`}>
+                <div className={`grid grid-cols-4  sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 lg:grid-cols-7 2xl:grid-cols-8 mt-4`}>
                     {suggestedData.length != 0 && suggestedData.map(channelName => {
                         const href = customiseUrl(channelName)
                         return (
