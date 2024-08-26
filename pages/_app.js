@@ -29,7 +29,6 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="asg_verification" content="vVcWCcbbgmnqv221hpAjPojb" />
         <meta name="Trafficstars" content="48702" />
-        <meta name="6a97888e-site-verification" content="16cdfe6e8685f083041f5af956d45bae"/>
         <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -42,23 +41,27 @@ function MyApp({ Component, pageProps }) {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
         <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://www.chutlunds.com" />
+        <meta property="og:url" content="https://www.fuckvideo.live" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/logo.png" />
+
+        
+        {/* Ads Netword Verification  */}
+        <meta name="clckd" content="f4f7556a2f970596698f7783f21dd137" />
       </Head>
 
 
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-6JFQKLE3DK"
+        src="https://www.googletagmanager.com/gtag/js?id=G-JDD6RJ6XQQ"
       />
 
       <Script id="gtm-script" strategy="afterInteractive">
         {` window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-6JFQKLE3DK');`}
+        gtag('config', 'G-JDD6RJ6XQQ');`}
       </Script>
 
 

@@ -87,12 +87,12 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
 
 
                 <meta name="description" content={`Check out the best porn videos and playlists from channel ${capitalizeFirstLetter(channelname.replace('+', " ").replace("+", " "))}`} />
-                <meta name="keywords" content="porn, xxx, streaming porn, HD porn, HD adult videos, HD pussy videos, sex movies, chutlunds" />
+                <meta name="keywords" content="porn, xxx, streaming porn, HD porn, HD adult videos, HD pussy videos, sex movies, FuckVideo" />
                 <meta property="og:title" content={`${capitalizeFirstLetter(channelname.replace('+', " ").replace("+", " "))} Porn Videos - ${currentPageNumberURL}`} />
                 <meta property="og:description" content={`Check out the best porn videos and playlists from channel ${capitalizeFirstLetter(channelname.replace('+', " ").replace("+", " "))}`} />
                 <meta name="twitter:title" content={`${capitalizeFirstLetter(channelname.replace('+', " ").replace("+", " "))} Porn Videos - ${currentPageNumberURL}`} />
                 <meta name="twitter:description" content={`Check out the best porn videos and playlists from channel ${capitalizeFirstLetter(channelname.replace('+', " ").replace("+", " "))}`} />
-                <link rel="canonical" href={`https://chutlunds.com/channels/${code}/${channelname}/page/${page}`} />
+                <link rel="canonical" href={`https://FuckVideo.live/channels/${code}/${channelname}/page/${page}`} />
 
 
 

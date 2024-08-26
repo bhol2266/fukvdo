@@ -57,16 +57,16 @@ function Index() {
 
         <div className="basicMargin">
             <Head>
-                <title>Chutlunds Categories: Find Your Favorite Free Hardcore Porn Videos</title>
-                <meta name="description" content="  Collections of free Japanese videos, Hentai porn videos, Russian porn videos, Chinese, Asian sex videos, Korean porn video and lot more" />
+                <title>FuckVideo Categories: Find Your Favorite Free Hardcore Porn Videos</title>
+                <meta name="description" content="FuckVideo has the best hardcore porn videos. Discover the newest XXX to stream in your favorite sex category. See the hottest amateurs and pornstars in action." />
 
 
                 <meta name="keywords" content="blowjob, japanese, big ass, deepthroat, jav, asian" />
-                <meta property="og:title" content="Chutlunds Categories: Find Your Favorite Free Hardcore Porn Videos" />
-                <meta property="og:description" content="  Collections of free Japanese videos, Hentai porn videos, Russian porn videos, Chinese, Asian sex videos, Korean porn video and lot more" />
-                <meta name="twitter:title" content="Chutlunds Categories: Find Your Favorite Free Hardcore Porn Videos" />
-                <meta name="twitter:description" content=" Collections of free Japanese videos, Hentai porn videos, Russian porn videos, Chinese, Asian sex videos, Korean porn video and lot more" />
-                <link rel="canonical" href={`https://chutlunds.com/category`} />
+                <meta property="og:title" content="FuckVideo Categories: Find Your Favorite Free Hardcore Porn Videos" />
+                <meta property="og:description" content="FuckVideo has the best hardcore porn videos. Discover the newest XXX to stream in your favorite sex category. See the hottest amateurs and pornstars in action." />
+                <meta name="twitter:title" content="FuckVideo Categories: Find Your Favorite Free Hardcore Porn Videos" />
+                <meta name="twitter:description" content="  Collections of free Japanese videos, Hentai porn videos, Russian porn videos, Chinese, Asian sex videos, Korean porn video and lot more" />
+                <link rel="canonical" href={`https://fuckvideo.live/category`} />
 
 
 

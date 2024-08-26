@@ -84,16 +84,16 @@ function Search({ tags }) {
         <div className="basicMargin mt-3">
 
             <Head>
-                <title>Most popular and trending porn searches- Chutlunds</title>
+                <title>Most popular and trending porn searches- FuckVideo</title>
                 <meta name="description"
-                    content="Most popular and trending porn searches - HD porn videos and adult movies- Chutlunds" />
+                    content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
                 
-                <meta property="og:title" content="Most popular and trending porn searches- Chutlunds" />
-                <meta property="og:description" content="Most popular and trending porn searches - HD porn videos and adult movies- Chutlunds" />
-                <meta name="twitter:title" content="Most popular and trending porn searches- Chutlunds" />
-                <meta name="twitter:description" content="Most popular and trending porn searches - HD porn videos and adult movies- Chutlunds" />
+                <meta property="og:title" content="Most popular and trending porn searches- FuckVideo" />
+                <meta property="og:description" content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
+                <meta name="twitter:title" content="Most popular and trending porn searches- FuckVideo" />
+                <meta name="twitter:description" content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <link rel="canonical" href={`https://chutlunds.com/search`} />
+                <link rel="canonical" href={`https://FuckVideo.live/search`} />
 
             </Head>
 

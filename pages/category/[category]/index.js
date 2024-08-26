@@ -33,15 +33,15 @@ function Category({ video_collection, pages }) {
     <>
 
       <Head>
-        <title>{capitalizeFirstLetter(category)} sex videos | Chutlunds</title>
-        <meta name="description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on Chutlunds.`} />
+        <title>{capitalizeFirstLetter(category)} sex videos</title>
+        <meta name="description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on FuckVideo.`} />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <meta property="og:title" content={`${capitalizeFirstLetter(category)} sex videos | Chutlunds`} />
-        <meta property="og:description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on Chutlunds.`} />
-        <meta name="twitter:title" content={`${capitalizeFirstLetter(category)} sex videos | Chutlunds`} />
-        <meta name="twitter:description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on Chutlunds.`} />
-        <link rel="canonical" href={`https://chutlunds.com/category/${category}`} />
+        <meta property="og:title" content={`${capitalizeFirstLetter(category)} sex videos`} />
+        <meta property="og:description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on FuckVideo.`} />
+        <meta name="twitter:title" content={`${capitalizeFirstLetter(category)} sex videos`} />
+        <meta name="twitter:description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on FuckVideo.`} />
+        <link rel="canonical" href={`https://FuckVideo.live/category/${category}`} />
       </Head>
 
 

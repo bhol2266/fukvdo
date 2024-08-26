@@ -201,7 +201,7 @@ const Videoplayer = () => {
 
                 <>
                     <Head>
-                        <title>{`${videoTitleBackup}`} | Chutlunds</title>
+                        <title>{`${videoTitleBackup}`}</title>
                         <meta name="description" content={`${capitalizeFirstLetter(videoTitleBackup)} sex video`} />
                         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                     </Head>
