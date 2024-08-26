@@ -74,10 +74,14 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </div>
           <hr />
-          {currentRoute != "/membership" && <Footer />}
+          {currentRoute != "/membership" &&
+            <>
+              <Footer />
+              <BannerAds />
+              <BannerAds />
+            </>
+          }
 
-          {currentRoute != "/membership" && <BannerAds />}
-          {currentRoute != "/membership" && <BannerAds />}
         </VideoState>
       </AuthContextProvider>
 
