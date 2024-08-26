@@ -36,7 +36,7 @@ module.exports = {
         'theme': '#13274F',
         'button': '#6C6C6C ',
         'button_hover': '#8C8C8C',
-        'semiblack': '#1B1212',
+        'semiblack': '#121317',
         'theme_yellow': '#ff4347',
 
       },
