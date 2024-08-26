@@ -53,7 +53,7 @@ function VideoThumbnail({ details, type }) {
     return (
         <div>
             <a href={`/video/${keyy}*${title}`} onClick={onClickHandler} data-title={video.title}>
-                <div className="animate-fade flex flex-col items-start justify-center cursor-pointer rounded-sm overflow-hidden transform transition duration-150 ">
+                <div className="animate-fade flex flex-col items-start justify-center cursor-pointer rounded-md overflow-hidden transform transition duration-150 mb-3 2xl:mb-4">
                     <div className={`relative w-full overflow-hidden  ${viewType === "grid" ? "aspect-custom md:aspect-video" : "aspect-video"}`}>
                         <img
                             className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out"
@@ -78,25 +78,26 @@ function VideoThumbnail({ details, type }) {
                         <img src='/crown.png' className='absolute top-0 right-0 h-6 lg:h-8 m-2 bg-white bg-opacity-70 p-0.5 rounded-md' alt="Premium" />
                     )}
 
-                    {/* <span className="absolute top-0 left-0 font-inter text-[12px] md:text-[16px] xl:text-[18px] px-1 lg:pl-2 py-1 text-white whitespace-nowrap bg-black bg-opacity-40">
+                    <span className="font-inter text-[14px] md:text-[16px] xl:text-[18px] px-1 lg:pl-2 py-1 whitespace-nowrap">
                         {video.title}
-                    </span>  */}
+                    </span>
 
-                    {/* <div className="flex items-center justify-start w-full pl-0.5 sm:pl-1 md:pb-2 lg:pl-2 font-arial -mt-1 lg:-mt-1.5">
+                    <div className="flex items-center justify-start w-full pl-0.5 sm:pl-1 md:pb-2 lg:pl-2 font-arial -mt-1 lg:-mt-1.5">
                         <div className="flex items-center">
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px] text-[#777777] font-inter'>{video.views} Views</p>
+                            <p className='text-[14px] md:text-[16px] xl:text-[17px] text-gray-400  font-inter'>{video.views} Views</p>
                         </div>
                         <div className="flex items-center ml-3">
                             <img className="w-[15px] h-[15px]  xl:w-[22px] xl:h-[22px]" src='/icons/thumb.png' alt="Likes" />
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px] text-[#777777] font-inter sm:ml-1 xl:ml-2'>{video.likePercentage}</p>
+                            <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter sm:ml-1 xl:ml-2 text-gray-400'>{video.likePercentage}</p>
                         </div>
                         <div className="hidden sm:flex items-center ml-2">
-                            <ClockIcon className="icon text-[#777777] w-[15px] h-[15px] xl:w-[25px] xl:h-[25px]" />
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px] text-[#777777] font-inter'>{video.uploadedTime}</p>
+                            <ClockIcon className="icon  w-[15px] h-[15px] xl:w-[25px] xl:h-[25px] text-white" />
+                            <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter'>{video.uploadedTime}</p>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </a>
+
         </div>
     );
 }

@@ -146,7 +146,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
 
                 <div className={` mt-4  transition ease-in-out delay-150 `}>
-                    <div className='flex my-1  md:w-3/5 md:mx-auto p-2 px-3  border-[1px] border-gray-200 space-x-2 md:space-x-4 xl:px-[50px] rounded-[15px]'  >
+                    <div className='flex my-1  md:w-3/5 md:mx-auto p-2 px-3   space-x-2 md:space-x-4 xl:px-[50px] rounded'  >
                         <SearchIcon className='h-6 w-6 text-gray-400' />
                         <input className='focus:outline-none flex-grow  font-inter rounded-lg bg-transparent' type='text' onChange={(event) => { onChangeHandler(event.target.value) }} placeholder='Search channel...'></input>
                     </div>
@@ -156,9 +156,9 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                     {suggestedData.length != 0 && suggestedData.map(channelName => {
                         const href = customiseUrl(channelName)
                         return (
-                            <Link key={channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
+                            <Link key={channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                 <img
-                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                    className='object-cover w-full rounded  '
                                     alt={channelName}
                                     src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
                                     loading="lazy"
@@ -183,9 +183,9 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                         const href = customiseUrl(channelName)
                         return (
                             <Link key={channelName} href={href}>
-                                <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
+                                <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                     <img
-                                        className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                        className='object-cover w-full rounded  '
                                         alt={channelName}
                                         src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
                                         loading="lazy"
@@ -209,9 +209,9 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                     {newChannels.map(channelName => {
                         const href = customiseUrl(channelName)
                         return (
-                            <Link key={channelName} href={href}>   <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
+                            <Link key={channelName} href={href}>   <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                 <img
-                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                    className='object-cover w-full rounded  '
                                     alt={channelName}
                                     src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
                                     loading="lazy"
@@ -247,9 +247,9 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                                 const href = customiseUrl(obj.channel_name)
                                 return (
                                     <Link key={obj.channel_name} href={href}>
-                                        <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
+                                        <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                             <img
-                                                className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                                className='object-cover w-full rounded  '
                                                 alt={obj.image_url}
                                                 src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${obj.channel_name.replace(/ /g, "_").toLowerCase()}.jpg`}
                                                 loading="lazy"
