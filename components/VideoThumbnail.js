@@ -78,7 +78,7 @@ function VideoThumbnail({ details, type }) {
                         <img src='/crown.png' className='absolute top-0 right-0 h-6 lg:h-8 m-2 bg-white bg-opacity-70 p-0.5 rounded-md' alt="Premium" />
                     )}
 
-                    <span className="font-inter text-[14px] md:text-[16px] xl:text-[18px] px-1 lg:pl-2 py-1 whitespace-nowrap">
+                    <span className="font-inter text-[14px] md:text-[16px] xl:text-[18px] px-1 lg:pl-2 py-1 text-white whitespace-nowrap">
                         {video.title}
                     </span>
 
@@ -91,8 +91,8 @@ function VideoThumbnail({ details, type }) {
                             <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter sm:ml-1 xl:ml-2 text-gray-400'>{video.likePercentage}</p>
                         </div>
                         <div className="hidden sm:flex items-center ml-2">
-                            <ClockIcon className="icon  w-[15px] h-[15px] xl:w-[25px] xl:h-[25px] text-white" />
-                            <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter'>{video.uploadedTime}</p>
+                            <ClockIcon className="icon  w-[15px] h-[15px] xl:w-[25px] xl:h-[25px] text-gray-400" />
+                            <p className='text-[14px] md:text-[16px] xl:text-[17px]  font-inter text-gray-400'>{video.uploadedTime}</p>
                         </div>
                     </div>
                 </div>
