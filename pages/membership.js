@@ -120,9 +120,9 @@ const Membership = () => {
                                     value={index}
                                     checked={selectedPlan.duration === plan.duration}
                                     onChange={() => handlePlanChange(plan)}
-                                    className="form-radio h-5 w-5 lg:h-6 lg:w-6 mr-2 lg:mr-3 text-theme border-theme focus:ring-theme"
+                                    className="form-radio h-5 w-5 lg:h-6 lg:w-6 mr-2 lg:mr-3 text-theme_yellow border-semiblack focus:ring-semiblack"
                                 />
-                                <label htmlFor={`plan-${index}`} className="font-poppins text-md lg:text-lg">{plan.duration}</label>
+                                <label htmlFor={`plan-${index}`} className="font-poppins text-md text-semiblack lg:text-lg">{plan.duration}</label>
                                 <span className={`font-arial font-semibold text-xs lg:text-sm ml-2 bg-red-500 text-white rounded-md px-1 py-0.5 ${plan.offer.length === 0 ? "hidden" : ""}`}>{plan.offer}</span>
                             </div>
                             <div>
@@ -135,7 +135,7 @@ const Membership = () => {
                 <div className="text-white text-[8px] lg:text-[10px] font-poppins text-center bg-black bg-opacity-50 px-2 py-0.5 w-fit mx-auto block rounded">This site is protected by reCAPTCHA and the Google <a className='underline' href="https://policies.google.com/privacy">Privacy Policy</a> and <a className='underline' href="https://policies.google.com/terms">Terms of Service</a> apply.</div>
 
 
-                <button onClick={() => setpaymentModalVisible(true)} className=' bg-theme text-white lg:px-8 lg:py-4 px-6 py-3 rounded-2xl font-poppins text-[14px] lg:text-[20px] mx-auto block  hover:scale-105 transition-all mt-4 lg:mt-6'>Get Access now!</button>
+                <button onClick={() => setpaymentModalVisible(true)} className=' bg-gray-200 text-semiblack lg:px-8 lg:py-4 px-6 py-3 rounded-2xl font-poppins text-[14px] lg:text-[20px] mx-auto block  hover:scale-105 transition-all mt-4 lg:mt-6'>Get Access now!</button>
 
 
                 <div className='-z-10 absolute bottom-0 lg:fixed p-4 lg:p-6 gap-4 lg:gap-6 left-0 grid grid-cols-2 lg:grid-cols-5 bg-black bg-opacity-70  w-full'>
@@ -144,8 +144,8 @@ const Membership = () => {
                         return (
                             <div key={obj.img} className=''>
                                 <img src={obj.img} alt="" className='w-[70px] lg:w-[80px] 2xl:w-[90px]  mx-auto mb-6 lg:mb-10' />
-                                <p className='text-white font-semibold font-inter tracking-wider block mx-auto text-center my-1 text-[14px] lg:text-[20px]'>{obj.heading}</p>
-                                <p className='text-gray-300 font-thin font-poppins  block mx-auto text-center lg:w-3/4 text-[11px] lg:text-[15px]'>{obj.sub_heading}</p>
+                                <p className='text-semiblack font-semibold font-inter tracking-wider block mx-auto text-center my-1 text-[14px] lg:text-[20px]'>{obj.heading}</p>
+                                <p className='text-semiblack font-thin font-poppins  block mx-auto text-center lg:w-3/4 text-[11px] lg:text-[15px]'>{obj.sub_heading}</p>
                             </div>
 
                         )
