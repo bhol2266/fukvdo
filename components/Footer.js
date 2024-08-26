@@ -34,7 +34,7 @@ function Footer() {
                 </div>
 
                 <div className='lg:ml-[120px] xl:ml-[200px]'>
-                    <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>ChutLunds Originals exclusive content</p>
+                    <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>FuckVideo Originals exclusive content</p>
                     <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Unlock 2708 channels in one subscription</p>
                     <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Never get bored</p>
                     <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Download thousands of videos</p>
