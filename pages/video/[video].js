@@ -189,7 +189,7 @@ const Videoplayer = () => {
                         />
                     </div>
 
-                    <p className='font-bold text-semiblack text-[18px] lg:text-[24px] font-manrope basicMargin mt-3'>More videos like this</p>
+                    <p className='font-bold  text-[18px] lg:text-[24px] font-manrope basicMargin mt-3'>More videos like this</p>
 
                     <Videos data={relatedVideos} />
                     {latestVideo.length !== 0 && <Videos data={latestVideo} />}
