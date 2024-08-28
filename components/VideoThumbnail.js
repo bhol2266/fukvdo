@@ -2,7 +2,7 @@ import { ClockIcon } from '@heroicons/react/outline';
 import { useContext, useEffect, useState } from "react";
 
 import videosContext from '../context/videos/videosContext';
-
+import PopunderAds from "./Ads/Popunder";
 
 function VideoThumbnail({ details, type }) {
 
@@ -97,7 +97,7 @@ function VideoThumbnail({ details, type }) {
                     </div>
                 </div>
             </a>
-
+            <PopunderAds/>
         </div>
     );
 }
