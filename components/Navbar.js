@@ -162,7 +162,7 @@ function Navbar() {
 
     return (
 
-        <div className='font-inter bg-semiblack block_popunder shadow-lg shadow-semiblack'>
+        <div className='font-inter bg-semiblack  shadow-lg shadow-semiblack'>
 
             <div className=" text-white p-2  lg:hidden">
 
