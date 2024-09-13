@@ -5,20 +5,18 @@ import { useContext, useEffect, useState } from 'react';
 import ReactCountryFlag from "react-country-flag";
 
 import BannerAds from '../components/Ads/BannerAds';
-import Outstreams from '../components/Ads/Outstream';
-import Sidebar from '../components/Sidebar';
 import Videos from '../components/Videos';
 import Category_slider from '../components/category_slider';
 import Channels_slider from '../components/channels_slider';
 import Pornstar_slider from '../components/pornstar_slider';
 
+import Link from "next/link";
 import Homepage_Title from '../components/Homepage_Title';
-import { getFirstKeyword, getSubscribedChannels, getSubscribedPornstars, updateCountry } from '../config/firebase/lib';
+import ShowMore from "../components/ShowMore";
+import { getFirstKeyword, updateCountry } from '../config/firebase/lib';
 import { getLanguge } from '../config/getLanguge';
 import { fetchVideos, getViewChannels, getViewPornstars, shuffle } from '../config/utils';
 import videosContext from '../context/videos/videosContext';
-import Link from "next/link";
-import ShowMore from "../components/ShowMore";
 
 export default function Home({ video_collection, trendingChannels, tags, trendingCategories, trendingPornstars }) {
   const { currentLocation, setcurrentLocation, viewType, setViewType } = useContext(videosContext);
@@ -221,7 +219,6 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
       <main className="flex-row flex  mt-1 md:mt-2 md:space-x-3">
         {/* <Sidebar /> */}
         <div className='w-full overflow-hidden'>
-          <Outstreams />
           <h1 className="lg:text-xl text-lg  text-gray-300 my-3 font-inter basicMargin w-fit border-b-[3px] border-theme_yellow">Trending Free Porn Videos</h1>
           <Videos data={video_collection[0].finalDataArray} />
           <ShowMore href={"/trending"} alt={"Trending Free Porn Videos"} />

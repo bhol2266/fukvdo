@@ -1,17 +1,14 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import jsonData from "../../JsonData/categoryImages/data.json"
-import Link from 'next/link'
 
-import Outstreams from '../../components/Ads/Outstream';
-import Head from 'next/head'
 import PopunderAds from '@/components/Ads/Popunder';
-import { scrapeChannelpage } from '../../config/channels';
-import Videos from '../../components/Videos';
-import channels from "../../JsonData/Channels.json"
-import InfiniteScroll from 'react-infinite-scroll-component';
-import fs from 'fs';
 import { SearchIcon } from '@heroicons/react/outline';
+import fs from 'fs';
+import Head from 'next/head';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Videos from '../../components/Videos';
+import channels from "../../JsonData/Channels.json";
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -176,7 +173,6 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
 
 
-                <Outstreams />
                 <PopunderAds />
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                     {trendingChannels.map(channelName => {

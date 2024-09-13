@@ -1,13 +1,10 @@
-import React from 'react'
-import * as cheerio from 'cheerio';
-import { useState, useRef, } from 'react';
-import Link from 'next/link'
-import { useRouter } from 'next/router';
-import Head from 'next/head'
-import Outstreams from '../../components/Ads/Outstream';
-import PopunderAds from '../../components/Ads/Popunder';
 import { SearchIcon } from '@heroicons/react/outline';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useRef, useState, } from 'react';
 import { FaTags } from "react-icons/fa6";
+import PopunderAds from '../../components/Ads/Popunder';
 
 function Search({ tags }) {
 
@@ -97,7 +94,6 @@ function Search({ tags }) {
 
             </Head>
 
-            <Outstreams />
             <PopunderAds />
 
             <div className={` mt-4  transition ease-in-out delay-150 `}>

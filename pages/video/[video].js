@@ -1,17 +1,15 @@
 import {
-    FilmIcon,
     InformationCircleIcon
 } from '@heroicons/react/solid';
 import { getCookie } from "cookies-next";
 import Head from 'next/head';
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
-import BannerAds from '../../components/Ads/BannerAds';
-import Outstreams from '../../components/Ads/Outstream';
-import VideoPlayer from '../../components/VideoPlayer';
-import Videos from '../../components/Videos';
 import { BeatLoader } from 'react-spinners';
 import bannedUrls from '../../bannedUrls';
+import BannerAds from '../../components/Ads/BannerAds';
+import VideoPlayer from '../../components/VideoPlayer';
+import Videos from '../../components/Videos';
 
 const Videoplayer = () => {
     const router = useRouter();
@@ -195,7 +193,6 @@ const Videoplayer = () => {
                     {latestVideo.length !== 0 && <Videos data={latestVideo} />}
 
                     <BannerAds />
-                    <Outstreams />
                 </>
             ) : (
 

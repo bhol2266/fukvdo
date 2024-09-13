@@ -157,14 +157,14 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
         <div className='3xl:w-3/5'>
 
-            {/* <Script
+            <Script
                 src="//imasdk.googleapis.com/js/sdkloader/ima3.js"
                 onLoad={() => {
                     const script = document.createElement("script");
                     script.src = "/vastAd.js";
                     document.body.appendChild(script);
                 }}
-            /> */}
+            />
 
             <div id="mainContainer" className={`relative w-full aspect-video object-contain  group  shadow-2xl sm:ml-2 lg:ml-4`}>
                 <video className={`w-full h-full cursor-pointer`} id="contentElement" onContextMenu={(e) => e.preventDefault()} ref={videoPlayerRef} poster={video_details.thumbnail} width="852" height="480" controls controlsList="nodownload"

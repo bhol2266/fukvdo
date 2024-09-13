@@ -74,13 +74,19 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </div>
           <hr />
-          {currentRoute != "/membership" &&
-            <>
-              <Footer />
-              <BannerAds />
-              <BannerAds />
-            </>
-          }
+
+          <div className='sm:flex items-center justify-center sm:w-1/2 lg:w-1/4 mx-auto mt-4'>
+            <BannerAds />
+            <Outstreams />
+            <Outstreams />
+            <Outstreams />
+            <BannerAds />
+          </div>
+
+
+          {currentRoute != "/membership" && <Footer />}
+
+          
 
         </VideoState>
       </AuthContextProvider>
