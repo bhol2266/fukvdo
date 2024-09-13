@@ -11,6 +11,7 @@ import { AuthContextProvider } from '../context/AuthContext';
 import VideoState from '../context/videos/VideoState';
 import '../styles/globals.css';
 import '../styles/nProgress.css';
+import Outstreams from '../components/Ads/Outstream';
 
 
 function MyApp({ Component, pageProps }) {
