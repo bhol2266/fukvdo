@@ -69,6 +69,30 @@ function Footer() {
 
                 </div>
 
+                <div className="w-1/2 lg:w-1/3">
+                    <p className='font-semibold text-theme_yellow text-[17px] text-left mb-2 lg:text-[20px]'>Quick Links</p>
+                    <Link passHref={true} href={'/'} legacyBehavior>
+                        <a rel="dofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Home</p>
+                        </a>
+                    </Link>
+                    <Link passHref={true} href={'/category'} legacyBehavior>
+                        <a rel="dofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Categories</p>
+                        </a>
+                    </Link>
+                    <Link passHref={true} href={'/channels'} legacyBehavior>
+                        <a rel="dofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Channels</p>
+                        </a>
+                    </Link>
+                    <Link passHref={true} href={'/membership'} legacyBehavior>
+                        <a rel="dofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Join Now</p>
+                        </a>
+                    </Link>
+                </div>
+
                 <div className="w-1/2 lg:w-1/3 mb-4">
                     <p className='font-semibold text-theme_yellow text-[17px] text-left mb-2 lg:text-[20px]'>Legal</p>
                     <Link passHref={true} href={'/terms'}>
@@ -100,6 +124,9 @@ function Footer() {
                         <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Parental Control</p>
                     </Link>
                 </div>
+
+
+
             </div>
 
             <hr className="hidden lg:block border-t-[1px] border-[#AEABAB] mb-4" />
