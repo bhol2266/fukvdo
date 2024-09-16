@@ -189,7 +189,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
         <meta name="msvalidate.01" content="8A6530C78E46DD0011117B2ECB618480" />
         <meta property="og:title" content="FuckVideo: Free Porn Videos and 4K Sex Movies" />
         <meta property="og:description" content="FuckVideo is the hottest free porn site in the world! Cum like never before and explore millions of fresh and free porn videos! Get lit on FuckVideo!" />
-        <link rel="canonical" href={`https://FuckVideo.live/`} />
+        <link rel="canonical" href="https://www.FuckVideo.live" />
 
       </Head>
 

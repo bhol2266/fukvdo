@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-
+        <meta http-equiv="content-language" content="en" />
         <meta property="og:image" content="/logo.png" />
         <meta property="og:url" content="https://www.fuckvideo.live" />
         <meta property="og:type" content="website" />

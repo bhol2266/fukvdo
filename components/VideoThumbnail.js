@@ -58,7 +58,7 @@ function VideoThumbnail({ details, type }) {
                         <img
                             className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out"
                             src={video.thumbnail}
-                            alt="Video Thumbnail"
+                            alt={video.title}
                         />
                         <div className="absolute bottom-1.5 right-2 bg-black bg-opacity-60 text-white text-xs md:text-sm lg:text-md 2xl:text-lg  px-2 py-1 rounded">
                             <span className="font-sans pr-1 font-black italic scale-125">{video.videoBadge}</span>

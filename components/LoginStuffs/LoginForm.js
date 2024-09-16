@@ -117,7 +117,7 @@ export const LoginForm = () => {
 
             <div className="flex flex-col justify-center">
 
-                <img src='/logo.png' alt="chutlunds" className='w-[200px] mx-auto  lg:w-[220px] mx-auto lg:-mt-2' />
+                <img src='/logo.png' alt="logo" className='w-[200px] mx-auto  lg:w-[220px] mx-auto lg:-mt-2' />
                 <p className='mb-6 font-inter text-white text-center text font-dancing text-2xl'>Unleash your desires!   </p>
 
 
@@ -193,12 +193,12 @@ export const LoginForm = () => {
                     <div className="w-full flex mb-5  mx-auto  space-x-4 ">
                         <div onClick={() => SignInButton('google')} className="group hover:bg-slate-200 w-full  flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
                             <img src='/login/google.png' className='lg:h-[38px] object-contain h-[22px] w-[22px] cursor-pointer ml-1' alt="Google" />
-                            <h2 className=' font-inter text-white text-[11px] lg:text-[14px] group-hover:text-semiblack'>Google</h2>
+                            <p className=' font-inter text-white text-[11px] lg:text-[14px] group-hover:text-semiblack'>Google</p>
                         </div>
 
                         <div onClick={() => SignInButton('google')} className="group hover:bg-slate-200 w-full flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
                             <img src='/login/facebook.png' className='lg:h-[40px] object-contain h-[24px] w-[24px] cursor-pointer ml-1' alt="Facebook" />
-                            <h2 className=' font-inter text-white text-[11px] lg:text-[14px] group-hover:text-semiblack'>Facebook</h2>
+                            <p className=' font-inter text-white text-[11px] lg:text-[14px] group-hover:text-semiblack'>Facebook</p>
                         </div>
                     </div>
 
