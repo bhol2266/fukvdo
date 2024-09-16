@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import videosContext from '../../context/videos/videosContext'
 import Router from 'next/router'
-
+import { capitalizeFirstLetter } from '../../config/utils'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -241,11 +241,7 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
     }
 
-    const capitalizeFirstLetter = (str) => {
-        if (!str) return '';
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-
+ 
 
 
     return (

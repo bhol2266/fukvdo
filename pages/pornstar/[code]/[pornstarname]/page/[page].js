@@ -12,7 +12,7 @@ import { PlusIcon } from '@heroicons/react/outline';
 import { getCookie } from 'cookies-next';
 import { checkSubcribedPornstar, updateSubcribedPornstars } from '../../../../../config/firebase/lib';
 import { UserAuth } from "@/context/AuthContext";
-
+import { capitalizeFirstLetter } from '../../../../../config/utils';
 
 
 function Index({ video_collection, pages, pornstarInformation, collageImages, pornstar_image }) {
@@ -43,11 +43,6 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
                 <BeatLoader loading size={25} color={'#D3D3D3'} />
             </div>
         )
-    }
-
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
 

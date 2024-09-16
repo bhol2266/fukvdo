@@ -6,7 +6,7 @@ import Sidebar from '../../../../components/Sidebar';
 import Videos from "../../../../components/Videos";
 import Header from '../../../../components/searchPage/Header';
 import { scrapeVideos } from '../../../../config/spangbang';
-
+import { capitalizeFirstLetter } from '../../../../config/utils';
 
 function Search({ video_collection, pages }) {
 
@@ -17,9 +17,7 @@ function Search({ video_collection, pages }) {
 
     const currentPageNumberURL = page
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+
 
 
     if (router.isFallback) {

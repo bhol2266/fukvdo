@@ -151,3 +151,11 @@ export function getViewPornstars() {
 
     return viewPornstars
 }
+
+
+export function capitalizeFirstLetter(string) {
+    // Remove all underscores
+    const cleanedString = string.replaceAll("_", " ");
+    // Capitalize the first letter
+    return cleanedString.charAt(0).toUpperCase() + cleanedString.slice(1);
+}

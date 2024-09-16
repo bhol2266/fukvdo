@@ -125,7 +125,7 @@ function Index() {
                     const posrnstar_Code = pornstar.href.substring(1, pornstar.href.indexOf('/pornstar'))
                     return (
 
-                        <Link key={pornstar.Name} href={`/pornstar/${posrnstar_Code}/${pornstar.Name.trim().toLowerCase().replace(/ /g, "+")}`}>
+                        <a key={pornstar.Name} href={`/pornstar/${posrnstar_Code}/${pornstar.Name.trim().toLowerCase().replace(/ /g, "+")}`}>
                             <div className='  relative hover:scale-105 transform transition duration-150 ' >
                                 <img
                                     className={`object-cover w-full rounded-lg  `}
@@ -149,13 +149,13 @@ function Index() {
                                         </div>
                                     </div> */}
                             </div>
-                        </Link>
+                        </a>
                     )
                 })}
             </div>
 
 
-            { suggestedData.length == 0 &&
+            {suggestedData.length == 0 &&
                 <InfiniteScroll
                     dataLength={data.length}
                     next={fetchMoreData}
@@ -167,7 +167,7 @@ function Index() {
 
                             const posrnstar_Code = pornstar.href.substring(1, pornstar.href.indexOf('/pornstar'))
                             return (
-                                <Link key={pornstar.Name} href={`/pornstar/${posrnstar_Code}/${pornstar.Name.trim().toLowerCase().replace(/ /g, "+")}`}>
+                                <a key={pornstar.Name} href={`/pornstar/${posrnstar_Code}/${pornstar.Name.trim().toLowerCase().replace(/ /g, "+")}`}>
                                     <div className='  relative hover:scale-105 transform transition duration-150 ' >
                                         <img
                                             className={`object-cover w-full rounded-lg  `}
@@ -178,7 +178,7 @@ function Index() {
 
                                         <h2 className='rounded-b-lg absolute text-sm lg:text-lg font-inter p-1 bottom-0 w-full text-center  z-10 text-white bg-black bg-opacity-50'>{pornstar.Name}</h2>
                                     </div>
-                                </Link>
+                                </a>
                                 // items[i].charAt(0).toUpperCase() + items[i].substring(1);
                             )
                         })}

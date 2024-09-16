@@ -6,7 +6,7 @@ import Sidebar from "../../../components/Sidebar";
 import Videos from "../../../components/Videos";
 import Header from '../../../components/searchPage/Header';
 import { scrapeVideos } from "../../../config/spangbang";
-
+import { capitalizeFirstLetter } from '../../../config/utils';
 
 
 function Category({ video_collection, pages }) {
@@ -24,10 +24,7 @@ function Category({ video_collection, pages }) {
   const { category } = router.query
   const currentPageNumberURL = '1'
 
-  function capitalizeFirstLetter(string) {
-    
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+ 
 
   return (
     <>

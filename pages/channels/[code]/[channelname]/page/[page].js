@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { UserAuth } from "@/context/AuthContext";
 import { getCookie } from 'cookies-next';
 import { useState, useEffect } from 'react';
-
+import { capitalizeFirstLetter } from '../../../../../config/utils';
 import { checkSubscribedChannel, updateSubcribedChannels } from '@/config/firebase/lib';
 
 
@@ -73,11 +73,6 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
         )
     }
 
-
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
     return (
         <>

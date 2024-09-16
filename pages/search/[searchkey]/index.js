@@ -7,7 +7,7 @@ import Videos from "../../../components/Videos";
 import Header from '../../../components/searchPage/Header';
 import { updatekeywords } from "../../../config/firebase/lib";
 import { scrapeVideos } from '../../../config/spangbang';
-
+import { capitalizeFirstLetter } from '../../../config/utils';
 
 function Search({ video_collection, pages }) {
 
@@ -26,9 +26,6 @@ function Search({ video_collection, pages }) {
   }, [searchkey]);
 
 
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
   if (router.isFallback || !searchkey) {
     return (

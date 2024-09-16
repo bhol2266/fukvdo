@@ -12,8 +12,7 @@ import Videos from "../../../../components/Videos";
 import { UserAuth } from "@/context/AuthContext";
 import { checkSubscribedChannel, updateSubcribedChannels } from '../../../../config/firebase/lib';
 import { getCookie } from 'cookies-next';
-import { updateViewChannels_Cookie } from '../../../../config/utils';
-
+import { capitalizeFirstLetter, updateViewChannels_Cookie } from '../../../../config/utils';
 
 
 function Index({ video_collection, pages, channel_name, channel_link, collageImages, channel_subscriber, channel_by }) {
@@ -83,10 +82,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
         )
     }
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
+  
     return (
         <>
 

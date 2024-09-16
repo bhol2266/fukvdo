@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { BeatLoader } from 'react-spinners';
 import Pagination from '../../components/Pagination';
 import { scrapeVideos } from '../../config/spangbang';
+import { capitalizeFirstLetter } from "../../config/utils";
 
 function HomepageVideos({ video_collection, pages }) {
     const router = useRouter();
@@ -21,9 +22,9 @@ function HomepageVideos({ video_collection, pages }) {
     const { homepageVideos } = router.query;
     const currentPageNumberURL = '1';
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+   
+    
+
 
     return (
         <>

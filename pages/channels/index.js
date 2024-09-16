@@ -153,7 +153,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                     {suggestedData.length != 0 && suggestedData.map(channelName => {
                         const href = customiseUrl(channelName)
                         return (
-                            <Link key={channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
+                            <a key={channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                 <img
                                     className='object-cover w-full rounded  '
                                     alt={channelName}
@@ -162,7 +162,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                                 ></img>
                                 <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{channelName}</h2>
                             </div>
-                            </Link>
+                            </a>
                         )
                     })}
 
@@ -242,7 +242,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                                 const href = customiseUrl(obj.channel_name)
                                 return (
-                                    <Link key={obj.channel_name} href={href}>
+                                    <a key={obj.channel_name} href={href}>
                                         <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                             <img
                                                 className='object-cover w-full rounded  '
@@ -252,7 +252,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                                             ></img>
                                             <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{obj.channel_name}</h2>
                                         </div>
-                                    </Link>
+                                    </a>
 
 
                                 )

@@ -13,7 +13,7 @@ import { checkSubcribedPornstar, updateSubcribedPornstars } from '../../../../co
 import { getCookie } from 'cookies-next';
 import { UserAuth } from "@/context/AuthContext";
 import { updateViewPornstars_Cookie } from '../../../../config/utils';
-
+import { capitalizeFirstLetter } from '../../../../config/utils';
 function Index({ video_collection, pages, pornstarInformation, collageImages, pornstar_image }) {
 
     const { setLoginModalVisible } = UserAuth();
@@ -54,9 +54,6 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
         );
     }
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
     async function clickSubscribe() {
 
         if (!getCookie("email")) {
@@ -125,7 +122,7 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
                                 {!isSubscribed &&
                                     <PlusIcon className="h-4 lg:h-5 text-white" />
                                 }
-                                <p className="text-xs lg:text-sm   font-poppins">
+                                <p className="text-xs lg:text-sm   font-poppins ">
                                     {pornstarInformation.subscribe.replace("Subscribe", "Subscribed")}
                                 </p>
                             </div>

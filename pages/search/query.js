@@ -9,7 +9,7 @@ import Router from 'next/router'
 import Head from 'next/head'
 import PaginationQuery from '../../components/PaginationQuery';
 import { scrapeVideos } from '../../config/spangbang';
-
+import { capitalizeFirstLetter } from "../../config/utils";
 function Category({ video_collection, pages, query, keyword, currentPage, filteredObjsArray }) {
 
 
@@ -17,11 +17,7 @@ function Category({ video_collection, pages, query, keyword, currentPage, filter
   const router = useRouter();
   const currentPageNumberURL = currentPage
 
-  function capitalizeFirstLetter(string) {
-    
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
+ 
   return (
 
     <>
