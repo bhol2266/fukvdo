@@ -22,8 +22,8 @@ function HomepageVideos({ video_collection, pages }) {
     const { homepageVideos } = router.query;
     const currentPageNumberURL = '1';
 
-   
-    
+
+
 
 
     return (
@@ -70,6 +70,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { homepageVideos } = context.params;
 
+    
     let href = "";
 
     // for  "featured"  will go to channels page from HomepageTitle component
@@ -87,10 +88,15 @@ export async function getStaticProps(context) {
         case 'random':
             href = `https://spankbang.party/trending_videos/`;
             break;
-        default:
+        case 'new':
             href = `https://spankbang.party/new_videos/`;
             break;
+        default:
+            href = `https://spankbang.party/s/${homepageVideos.toLowerCase().trim()}/?o=all`;
+            break;
     }
+
+
 
     if (homepageVideos == "trending") {
 

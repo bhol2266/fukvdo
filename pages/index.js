@@ -289,7 +289,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
 
           <Homepage_Title title="New Videos" />
           <Videos data={video_collection[4].finalDataArray} />
-          <ShowMore href={`/new_videos`} alt={"More New Videos"} />
+          <ShowMore href={`/new`} alt={"More New Videos"} />
 
 
 

@@ -91,8 +91,11 @@ export async function getStaticProps(context) {
         case 'random':
             href = `https://spankbang.party/trending_videos/${page}/`;
             break;
-        default:
+        case 'new':
             href = `https://spankbang.party/new_videos/${page}/`;
+            break;
+        default:
+            href = `https://spankbang.party/s/${homepageVideos.toLowerCase().trim()}/${page}/?o=all`;
             break;
     }
 
