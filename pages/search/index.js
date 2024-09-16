@@ -112,11 +112,11 @@ function Search({ tags }) {
             <div className='my-2 flex flex-wrap'>
                 {tagsArray.map(keyword => {
                     return (
-                        <Link key={keyword} href={`/search/${keyword.trim().replace(/ /g, "+")}`}>
+                        <a key={keyword} href={`/search/${keyword.trim().replace(/ /g, "+")}`}>
                             <div className='text-sm border-[1px] border-[#9499A8]  px-2 py-1 rounded-lg my-2 mx-2  hover:bg-gray-200 font-poppins hover:text-semiblack md:text-lg'>
                                 <h2 className='text-center'>{keyword}</h2>
                             </div>
-                        </Link>
+                        </a>
                     )
                 })}
             </div>

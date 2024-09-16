@@ -56,16 +56,16 @@ function Search({ video_collection, pages }) {
 export default Search;
 
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       { params: { searchkey: 'bbc' } },
-//     ],
-//     fallback: true // 'blocking' or 'true'
-//   };
-// }
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { searchkey: 'bbc' } },
+    ],
+    fallback: true // 'blocking' or 'true'
+  };
+}
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { searchkey } = context.params;
 
   if (searchkey == "bbc") {

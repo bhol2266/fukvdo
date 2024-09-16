@@ -64,16 +64,16 @@ function Search({ video_collection, pages }) {
 export default Search
 
 
-// export async function getStaticPaths() {
-//     return {
+export async function getStaticPaths() {
+    return {
 
-//         paths: [{ params: { searchkey: 'bbc', page: '1' } }],
-//         fallback: true // false or 'blocking'
-//     };
-// }
+        paths: [{ params: { searchkey: 'bbc', page: '1' } }],
+        fallback: true // false or 'blocking'
+    };
+}
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
     const { searchkey, page } = context.params;
 
