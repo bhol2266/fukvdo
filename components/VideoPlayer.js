@@ -315,7 +315,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                             if (key.length >= 1) {
 
                                 return (
-                                    <a key={key} href={`/search/${key.trim()}`} passHref>
+                                    <a key={key} href={`/search/${key.trim()}`} >
                                         <p className="text-xs border-[1px] border-[#9499A8] text-gray-300 px-2 py-1 rounded-lg m-1 inline-block lg:text-sm  hover:bg-gray-100 font-inter hover:text-semiblack">
                                             {key}
                                         </p>
