@@ -95,33 +95,49 @@ function Footer() {
 
                 <div className="w-1/2 lg:w-1/3 mb-4">
                     <p className='font-semibold text-theme_yellow text-[17px] text-left mb-2 lg:text-[20px]'>Legal</p>
-                    <Link passHref={true} href={'/terms'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Terms of use</p>
+                    <Link passHref={true} href={'/terms'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Terms of use</p>
+                        </a>
                     </Link>
-                    <Link passHref={true} href={'/privacy'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Privacy Policy</p>
+                    <Link passHref={true} href={'/privacy'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Privacy Policy</p>
+                        </a>
                     </Link>
-                    <Link passHref={true} href={'/contact'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Cookies Policy</p>
+                    <Link passHref={true} href={'/contact'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Cookies Policy</p>
+                        </a>
                     </Link>
-                    <Link passHref={true} href={'/parentalcontrol'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Parental Control</p>
+                    <Link passHref={true} href={'/parentalcontrol'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Parental Control</p>
+                        </a>
                     </Link>
                 </div>
 
                 <div className="w-1/2 lg:w-1/3">
                     <p className='font-semibold text-theme_yellow text-[17px] text-left mb-2 lg:text-[20px]'>Help</p>
-                    <Link passHref={true} href={'/faq'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>FAQ</p>
+                    <Link passHref={true} href={'/faq'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>FAQ</p>
+                        </a>
                     </Link>
-                    <Link passHref={true} href={'/contact'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Contact us</p>
+                    <Link passHref={true} href={'/contact'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Contact us</p>
+                        </a>
                     </Link>
-                    <Link passHref={true} href={'/contact'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Content removal</p>
+                    <Link passHref={true} href={'/contact'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Content removal</p>
+                        </a>
                     </Link>
-                    <Link passHref={true} href={'/parentalcontrol'}>
-                        <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Parental Control</p>
+                    <Link passHref={true} href={'/parentalcontrol'} legacyBehavior>
+                        <a rel="nofollow">
+                            <p className='text-white text-[15px] text-left my-3 w-fit border-b-2 border-transparent hover:border-theme_yellow transition-colors lg:text-[18px]'>Parental Control</p>
+                        </a>
                     </Link>
                 </div>
 
