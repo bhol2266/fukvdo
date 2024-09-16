@@ -183,13 +183,14 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
   return (
     <div className=" ">
       <Head>
-        <title>FuckVideo: Free Porn Videos and 4K Sex Movies</title>
+        <title>Collection of Full Length HD Porn Videos and 4K Sex Movies with Free Download</title>
         <meta name="description" content="FuckVideo is the hottest free porn site in the world! Cum like never before and explore millions of fresh and free porn videos! Get lit on FuckVideo!" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="msvalidate.01" content="8A6530C78E46DD0011117B2ECB618480" />
-        <meta property="og:title" content="FuckVideo: Free Porn Videos and 4K Sex Movies" />
+        <meta name="keywords" content="porn, xxx, streaming porn, HD porn, HD adult videos, HD pussy videos, sex movies, FuckVideo" />
+        <meta property="og:title" content="Free Porn Videos and 4K Sex Movies" />
         <meta property="og:description" content="FuckVideo is the hottest free porn site in the world! Cum like never before and explore millions of fresh and free porn videos! Get lit on FuckVideo!" />
-        <link rel="canonical" href="https://www.FuckVideo.live" />
+        <link rel="canonical" href="https://www.fuckvideo.live" />
 
       </Head>
 
