@@ -36,7 +36,7 @@ const Videoplayer = () => {
     const [latestVideo, setLatestVideo] = useState([]);
 
     const [showNotAvailableMessage, setShowNotAvailableMessage] = useState(false);
-
+   
     useEffect(() => {
         if (!router.isReady) return;
 
