@@ -159,7 +159,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
         <div className='flex items-start space-x-2'>
 
-            <div className='flex-grow basis-3/4 3xl:basis-4/5'>
+            <div className='flex-grow basis-3/4 3xl:basis-4/5 w-full'>
 
                 <Script
                     src="//imasdk.googleapis.com/js/sdkloader/ima3.js"
@@ -170,7 +170,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                     }}
                 />
 
-                <div id="mainContainer" className={`relative aspect-video object-contain  group  shadow-2xl sm:ml-2 lg:ml-4`}>
+                <div id="mainContainer" className={`w-fullrelative aspect-video object-contain  group  shadow-2xl  lg:ml-4`}>
                     <video className={`rounded w-full h-full cursor-pointer`} id="contentElement" onContextMenu={(e) => e.preventDefault()} ref={videoPlayerRef} poster={video_details.thumbnail} width="852" height="480" controls controlsList="nodownload"
                     >
                         <source src={VideoSrc} type="video/mp4" />
@@ -292,7 +292,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                     {/* Positions */}
                     {positionsArray.length != 0 &&
 
-                        <div className='flex items-center mb-3 mt-1'>
+                        <div className='flex items-center mb-3 mt-1 ml-1'>
 
                             <span className="font-inter text-sm lg:text-md 2xl:text-xl font-bold whitespace-nowrap text-gray-300 ">Skip to scene:</span>
 
