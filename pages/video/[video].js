@@ -36,7 +36,7 @@ const Videoplayer = () => {
     const [latestVideo, setLatestVideo] = useState([]);
 
     const [showNotAvailableMessage, setShowNotAvailableMessage] = useState(false);
-   
+
     useEffect(() => {
         if (!router.isReady) return;
 
@@ -174,7 +174,7 @@ const Videoplayer = () => {
 
                     <h1 className='text-md sm:text-lg text-white  text-wrap mt-4   md:text-2xl font-inter basicMargin'>{videoDetails.Title}</h1>
 
-                    <div className='py-1 rounded overflow-hidden sm:cursor-pointer 2xl:w-4/5'>
+                    <div className='py-1 rounded overflow-hidden sm:cursor-pointer'>
                         <VideoPlayer
                             video_details={videoDetails}
                             VideoSrc={VideoSrc}
@@ -184,6 +184,7 @@ const Videoplayer = () => {
                             pornstar={pornstar}
                             positionsArray={positionsArray}
                             loggedIn={loggedIn}
+                            relatedVideos={relatedVideos.slice(relatedVideos.length - 5, relatedVideos.length - 1)}
                         />
                     </div>
 

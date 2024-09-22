@@ -88,12 +88,12 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
 
 
             <Head>
-                <title>{`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos - FuckVideo`}</title>
+                <title>{`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos`}</title>
                 <meta name="description" content={`Check out the best porn videos and playlists from channel ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))}`} />
                 <meta name="keywords" content="porn, xxx, streaming porn, HD porn, HD adult videos, HD pussy videos, sex movies, FuckVideo" />
-                <meta property="og:title" content={`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos - FuckVideo`} />
+                <meta property="og:title" content={`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos`} />
                 <meta property="og:description" content={`Check out the best porn videos and playlists from channel ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))}`} />
-                <meta name="twitter:title" content={`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos - FuckVideo`} />
+                <meta name="twitter:title" content={`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos`} />
                 <meta name="twitter:description" content={`Check out the best porn videos and playlists from channel ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))}`} />
                 <link rel="canonical" href={`https://FuckVideo.live/channels/${code}/${channelname}`} />
 

@@ -127,12 +127,12 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 <Head>
 
-                    <title>Hot Porn Channels and Exclusive Adult Videos - Fuckvideo</title>
+                    <title>Hot Porn Channels and Exclusive Adult Videos</title>
                     <meta name="description" content="The Hottest Japanese Porn Movies Divided By Channels! Discover on JAV HD the Best XXX JAV Channels & Free Sex Scenes: JAVHD, CARIBBEANCOM, JAVHUB, JAPANHDV" />
                     <meta name="keywords" content="porn, xxx, streaming porn, HD porn, HD adult videos, HD pussy videos, sex movies, Fuckvideo" />
-                    <meta property="og:title" content="Hot Porn Channels and Exclusive Adult Videos - Fuckvideo" />
+                    <meta property="og:title" content="Hot Porn Channels and Exclusive Adult Videos" />
                     <meta property="og:description" content="The Hottest Japanese Porn Movies Divided By Channels! Discover on JAV HD the Best XXX JAV Channels & Free Sex Scenes: JAVHD, CARIBBEANCOM, JAVHUB, JAPANHDV" />
-                    <meta name="twitter:title" content="Hot Porn Channels and Exclusive Adult Videos - Fuckvideo" />
+                    <meta name="twitter:title" content="Hot Porn Channels and Exclusive Adult Videos" />
                     <meta name="twitter:description" content="The Hottest Japanese Porn Movies Divided By Channels! Discover on JAV HD the Best XXX JAV Channels & Free Sex Scenes: JAVHD, CARIBBEANCOM, JAVHUB, JAPANHDV" />
                     <link rel="canonical" href={`https://fuckvideo.live/channels`} />
 

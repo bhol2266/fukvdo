@@ -35,7 +35,7 @@ export default function Banner_for_chutlund2() {
   if (loading) return null; // Don't render the component until the cookie check is done
 
   return (
-    <div className={`bg-gray-800 m-2 text-white p-4 flex justify-between items-center ${isVisible ? '' : 'hidden'}`}>
+    <div className={`bg-black m-2 text-white p-4 flex justify-between items-center ${isVisible ? '' : 'hidden'}`}>
       <span className="flex-1 text-left md:text-center text-sm md:text-md">
         If this website is blocked in your country (
         <Flag code="CN" style={{ width: '20px', height: '14px' }} className="inline-block mx-1" />

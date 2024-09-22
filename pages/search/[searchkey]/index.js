@@ -39,7 +39,7 @@ function Search({ video_collection, pages }) {
   return (
     <>
       <Head>
-        <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - FuckVideo`}</title>
+        <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos`}</title>
         <meta name="description"
           content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos for free, here on FuckVideo.live. Discover the growing collection of high quality Most Relevant XXX movies and clips. No other sex tube is more popular and features more ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} scenes than FuckVideo! Browse through our impressive selection of porn videos in HD quality on any device you own.`} />
         {/* Additional meta tags */}

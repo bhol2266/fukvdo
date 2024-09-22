@@ -53,7 +53,7 @@ function VideoThumbnail({ details, type }) {
     return (
         <div>
             <a href={`/video/${keyy}*${title}`} onClick={onClickHandler} data-title={video.title}>
-                <div className="animate-fade flex flex-col items-start justify-center cursor-pointer rounded-md overflow-hidden transform transition duration-150 mb-3 2xl:mb-4">
+                <div className="w-full animate-fade flex flex-col items-start justify-center cursor-pointer rounded-md overflow-hidden transform transition duration-150 mb-3 2xl:mb-4">
                     <div className={`relative w-full overflow-hidden  ${viewType === "grid" ? "aspect-custom md:aspect-video" : "aspect-video"}`}>
                         <img
                             className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out"
@@ -78,9 +78,10 @@ function VideoThumbnail({ details, type }) {
                         <img src='/crown.png' className='absolute top-0 right-0 h-6 lg:h-8 m-2 bg-white bg-opacity-70 p-0.5 rounded-md' alt="Premium" />
                     )}
 
-                    <span className="font-inter text-[14px] md:text-[16px] xl:text-[18px] px-1 lg:pl-2 py-1 text-white whitespace-nowrap">
+                    <span className="font-inter text-[14px] md:text-[16px] xl:text-[18px] px-1 lg:pl-2 py-1 text-white line-clamp-1	">
                         {video.title}
                     </span>
+
 
                     <div className="flex items-center justify-start w-full pl-0.5 sm:pl-1 md:pb-2 lg:pl-2 font-arial -mt-1 lg:-mt-1.5">
                         <div className="flex items-center">
@@ -97,7 +98,7 @@ function VideoThumbnail({ details, type }) {
                     </div>
                 </div>
             </a>
-            <PopunderAds/>
+            <PopunderAds />
         </div>
     );
 }

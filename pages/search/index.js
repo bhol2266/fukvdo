@@ -81,14 +81,14 @@ function Search({ tags }) {
         <div className="basicMargin mt-3">
 
             <Head>
-                <title>Most popular and trending porn searches- FuckVideo</title>
+                <title>Most popular and trending porn searches</title>
                 <meta name="description"
-                    content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
+                    content="Most popular and trending porn searches - HD porn videos and adult movies" />
                 
-                <meta property="og:title" content="Most popular and trending porn searches- FuckVideo" />
-                <meta property="og:description" content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
-                <meta name="twitter:title" content="Most popular and trending porn searches- FuckVideo" />
-                <meta name="twitter:description" content="Most popular and trending porn searches - HD porn videos and adult movies- FuckVideo" />
+                <meta property="og:title" content="Most popular and trending porn searches" />
+                <meta property="og:description" content="Most popular and trending porn searches - HD porn videos and adult movies" />
+                <meta name="twitter:title" content="Most popular and trending porn searches" />
+                <meta name="twitter:description" content="Most popular and trending porn searches - HD porn videos and adult movies" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <link rel="canonical" href={`https://FuckVideo.live/search`} />
 
