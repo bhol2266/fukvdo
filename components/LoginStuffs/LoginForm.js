@@ -18,8 +18,7 @@ export const LoginForm = () => {
 
 
     const SignInButton = async (auth_provider) => {
-        // signIn(auth_provider);
-        // router.push('/api/auth/google')
+
         var authUrl = ""
         const scope = 'profile email';
 
@@ -35,7 +34,10 @@ export const LoginForm = () => {
 
         }
 
-        router.push(authUrl)
+        console.log("currentHost: ", currentHost);
+        console.log(authUrl);
+
+        window.location.href = authUrl
 
     }
 

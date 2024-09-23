@@ -44,8 +44,7 @@ export const SignUpForm = () => {
 
 
     const SignInButton = async (auth_provider) => {
-        // signIn(auth_provider);
-        // router.push('/api/auth/google')
+ 
         var authUrl = ""
         const scope = 'profile email';
 
