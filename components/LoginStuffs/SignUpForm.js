@@ -43,7 +43,7 @@ export const SignUpForm = () => {
     }
 
 
-    const SignInButtonn = async (auth_provider) => {
+    const SignInButton = async (auth_provider) => {
  
         console.log("sdafdsfsdfsadf");
 
@@ -256,7 +256,7 @@ export const SignUpForm = () => {
 
 
 
-                    <p className="my-3 text-center text-sm text-white">
+                    <p onClick={()=>{SignInButton("sdafsdf")}} className="my-3 text-center text-sm text-white">
                         Already have an account?
                         <span onClick={() => { loginHere() }} className="underline cursor-pointer text-theme_yellow"> Login here</span>
                     </p>
