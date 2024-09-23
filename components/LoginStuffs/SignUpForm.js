@@ -45,6 +45,8 @@ export const SignUpForm = () => {
 
     const SignInButton = async (auth_provider) => {
  
+        console.log(router.asPath);
+        
         var authUrl = ""
         const scope = 'profile email';
 
