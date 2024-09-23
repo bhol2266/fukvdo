@@ -43,10 +43,10 @@ export const SignUpForm = () => {
     }
 
 
-    const SignInButton = async (auth_provider) => {
+    const SignInButtonn = async (auth_provider) => {
  
         console.log("sdafdsfsdfsadf");
-                
+
         console.log(router.asPath);
         console.log(window.location.host);
 
@@ -272,12 +272,12 @@ export const SignUpForm = () => {
                     </div>
 
                     <div className="w-full flex mb-5  mx-auto  space-x-4 ">
-                        <div onClick={() => SignInButton('google')} className="group hover:bg-slate-200 w-full  flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
+                        <div onClick={() => SignInButtonn('google')} className="group hover:bg-slate-200 w-full  flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
                             <img src='/login/google.png' className='lg:h-[38px] object-contain h-[22px] w-[22px] cursor-pointer ml-1' alt="Google" />
                             <p className=' font-inter text-white text-[11px] lg:text-[14px] group-hover:text-semiblack'>Google</p>
                         </div>
 
-                        <div onClick={() => SignInButton('google')} className="group hover:bg-slate-200 w-full flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
+                        <div onClick={() => SignInButtonn('google')} className="group hover:bg-slate-200 w-full flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
                             <img src='/login/facebook.png' className='lg:h-[40px] object-contain h-[24px] w-[24px] cursor-pointer ml-1' alt="Facebook" />
                             <p className=' font-inter text-white text-[11px] lg:text-[14px] group-hover:text-semiblack'>Facebook</p>
                         </div>
