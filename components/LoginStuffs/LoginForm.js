@@ -18,26 +18,24 @@ export const LoginForm = () => {
 
 
     const SignInButton = async (auth_provider) => {
-    
+
         var authUrl = ""
         const scope = 'profile email';
 
         const currentHost = window.location.host;
-        if (currentHost == "localhost:3000") {
+        if (currentHost.includes("localhost:3000")) {
             const REDIRECT_URI1 = "http://localhost:3000/api/auth/callback"
             authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI1}&scope=${scope}`;
 
         }
-        if (currentHost == "fuckvideo.live") {
+        if (currentHost.includes("fuckvideo.live")) {
             const REDIRECT_URI2 = "https://www.fuckvideo.live/api/auth/fuckvideo/callback"
             authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI2}&scope=${scope}`;
 
         }
 
-        console.log(window.location.host);
-        console.log(authUrl);
+        window.location.href = authUrl
 
-        // window.location.href = authUrl
 
     }
 
