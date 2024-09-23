@@ -46,6 +46,8 @@ export const SignUpForm = () => {
     const SignInButton = async (auth_provider) => {
  
         console.log(router.asPath);
+        console.log(window.location.host);
+
         return
         
         var authUrl = ""
