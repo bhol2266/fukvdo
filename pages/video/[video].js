@@ -10,10 +10,15 @@ import bannedUrls from '../../bannedUrls';
 import BannerAds from '../../components/Ads/BannerAds';
 import VideoPlayer from '../../components/VideoPlayer';
 import Videos from '../../components/Videos';
+import { useMediaQuery } from 'react-responsive';
+
 
 const Videoplayer = () => {
     const router = useRouter();
     const { video } = router.query;
+
+    const islargeScreen = useMediaQuery({ minWidth: 1000 }); // Adjust according to your breakpoint
+
 
     const [spinnerLoading, setSpinnerLoading] = useState(true);
     const [serverError, setServerError] = useState(false);
@@ -190,7 +195,9 @@ const Videoplayer = () => {
 
                     <p className='text-[18px] lg:text-[24px] font-manrope basicMargin mt-3'>More videos like this</p>
 
-                    <Videos data={relatedVideos} />
+                    {islargeScreen && <Videos data={relatedVideos.slice(4, relatedVideos.length)} />}
+                    {!islargeScreen && <Videos data={relatedVideos} />}
+                    
                     {latestVideo.length !== 0 && <Videos data={latestVideo} />}
 
                     <BannerAds />

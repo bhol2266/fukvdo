@@ -441,7 +441,7 @@ function Navbar() {
                                     src='/livesex.png'
                                     height={35}
                                     width={35}
-                                    alt='loading'
+                                    alt='livesex'
                                 ></img>
                                 <p className='font-bold '>Live Sex</p>
                             </div>

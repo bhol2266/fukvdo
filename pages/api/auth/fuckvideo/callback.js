@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-  const redirectUri = "https://www.chutlunds.com/api/auth/chutlunds/callback"; // Make sure this matches your registered URI
+  const redirectUri = "https://www.fuckvideo.live/api/auth/fuckvideo/callback"; // Make sure this matches your registered URI
 
   if (!code) {
     return res.status(400).json({ error: 'No code provided' });
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
     const userData = await userResponse.json();
 
 
-    await fetch(`http://www.chutlunds.com/api/auth/saveProfileFirestore`, {
+    await fetch(`http://www.fuckvideo.live/api/auth/saveProfileFirestore`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
