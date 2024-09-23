@@ -62,7 +62,7 @@ export const SignUpForm = () => {
         }
 
 
-        window.location.href = authUrl;
+        router.push(authUrl)
 
     }
 
