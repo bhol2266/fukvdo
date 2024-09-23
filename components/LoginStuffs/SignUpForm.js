@@ -45,6 +45,8 @@ export const SignUpForm = () => {
 
     const SignInButton = async (auth_provider) => {
  
+        console.log("sdafdsfsdfsadf");
+        
         console.log(router.asPath);
         console.log(window.location.host);
 
