@@ -14,7 +14,7 @@ function PopunderAds() {
     // Only render the Script component if not on localhost
     return (
         <div className="flex items-center justify-center">
-            {/* {!isLocalhost && (
+            {!isLocalhost && (
                 <Script
                     type="text/javascript"
                     src="//cdn.tsyndicate.com/sdk/v1/p.js"
@@ -27,7 +27,7 @@ function PopunderAds() {
                     async
                     defer
                 />
-            )} */}
+            )}
         </div>
     );
 }
