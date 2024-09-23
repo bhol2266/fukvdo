@@ -59,7 +59,9 @@ export const SignUpForm = () => {
             authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI2}&scope=${scope}`;
 
         }
-console.log(authUrl);
+
+        console.log(window.location.host);
+        console.log(authUrl);
 
 
         // window.location.href = authUrl

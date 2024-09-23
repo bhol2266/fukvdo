@@ -34,6 +34,7 @@ export const LoginForm = () => {
 
         }
 
+        console.log(window.location.host);
         console.log(authUrl);
 
         // window.location.href = authUrl
