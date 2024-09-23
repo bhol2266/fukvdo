@@ -43,15 +43,8 @@ export const SignUpForm = () => {
     }
 
 
-    const SignInButton = async (auth_provider) => {
- 
-        console.log("sdafdsfsdfsadf");
+    const SignInButtonn = async (auth_provider) => {
 
-        console.log(router.asPath);
-        console.log(window.location.host);
-
-        return
-        
         var authUrl = ""
         const scope = 'profile email';
 
@@ -67,11 +60,8 @@ export const SignUpForm = () => {
 
         }
 
-        console.log("currentHost: ", currentHost);
-        console.log(authUrl);
 
-        // window.location.href = authUrl
-
+        window.location.href = authUrl
     }
 
     const loginHere = () => {
@@ -256,7 +246,7 @@ export const SignUpForm = () => {
 
 
 
-                    <p onClick={()=>{SignInButton("sdafsdf")}} className="my-3 text-center text-sm text-white">
+                    <p className="my-3 text-center text-sm text-white">
                         Already have an account?
                         <span onClick={() => { loginHere() }} className="underline cursor-pointer text-theme_yellow"> Login here</span>
                     </p>
