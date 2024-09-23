@@ -18,13 +18,7 @@ export const LoginForm = () => {
 
 
     const SignInButton = async (auth_provider) => {
-        console.log("sdafdsfsdfsadf")
     
-        console.log(router.asPath);
-        console.log(window.location.host);
-        return
-
-
         var authUrl = ""
         const scope = 'profile email';
 
@@ -40,10 +34,8 @@ export const LoginForm = () => {
 
         }
 
-        console.log("currentHost: ", currentHost);
-        console.log(authUrl);
 
-        // window.location.href = authUrl
+        window.location.href = authUrl
 
     }
 
