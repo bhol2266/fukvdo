@@ -65,7 +65,7 @@ export const SignUpForm = () => {
         console.log("currentHost: ", currentHost);
         console.log(authUrl);
 
-        window.location.href = authUrl
+        // window.location.href = authUrl
 
     }
 

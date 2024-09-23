@@ -39,7 +39,7 @@ export const LoginForm = () => {
         console.log("currentHost: ", currentHost);
         console.log(authUrl);
 
-        window.location.href = authUrl
+        // window.location.href = authUrl
 
     }
 
