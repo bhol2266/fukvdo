@@ -8,7 +8,7 @@ function Rough({ video_collection }) {
         <div>
 
             <div className="m-2 p-2 flex mb-4 items-start">
-                <div className="bg-red-500 flex-grow aspect-video basis-3/4 3xl:basis-4/5">Video player</div>
+                <div className="bg-slate-500 flex-grow aspect-video basis-3/4 3xl:basis-4/5">im working player</div>
 
                 <div className="hidden lg:block flex-grow basis-1/4 3xl:basis-1/5 bg-blue-500">
                     <div className="mx-1 mb-2 rounded bg-pink-300 aspect-video">Video item 1</div>
