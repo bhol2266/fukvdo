@@ -37,7 +37,7 @@ module.exports = {
         'button': '#6C6C6C ',
         'button_hover': '#8C8C8C',
         'semiblack': '#28282B',
-        'theme_yellow': '#ff4347',
+        'theme_red': 'rgb(226, 98, 100)',
 
       },
       fontFamily: {

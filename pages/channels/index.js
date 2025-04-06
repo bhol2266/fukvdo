@@ -169,7 +169,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 </div>
 
 
-                <h1 className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_yellow'>Trending Channels</h1>
+                <h1 className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_red'>Trending Channels</h1>
 
 
 
@@ -197,7 +197,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 </div>
 
-                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_yellow'>New Channels</p>
+                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_red'>New Channels</p>
 
 
 
@@ -224,7 +224,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 </div>
 
 
-                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_yellow'>All Channels</p>
+                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_red'>All Channels</p>
 
 
 

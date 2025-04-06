@@ -6,7 +6,7 @@ import Sidebar from '../../../../components/Sidebar';
 import Videos from "../../../../components/Videos";
 import Header from '../../../../components/searchPage/Header';
 import { scrapeVideos } from '../../../../config/spangbang';
-import { capitalizeFirstLetter } from '../../../../config/utils';
+
 
 function Search({ video_collection, pages }) {
 
@@ -17,13 +17,15 @@ function Search({ video_collection, pages }) {
 
     const currentPageNumberURL = page
 
-
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
 
     if (router.isFallback) {
         return (
             <div className="flex justify-center mx-auto mt-10 ">
-                <BeatLoader loading size={25} color={'#D3D3D3'} />
+                <BeatLoader loading size={25} color={'#232b2b'} />
             </div>
         )
     }
@@ -64,16 +66,16 @@ function Search({ video_collection, pages }) {
 export default Search
 
 
-export async function getStaticPaths() {
-    return {
+// export async function getStaticPaths() {
+//     return {
 
-        paths: [{ params: { searchkey: 'bbc', page: '1' } }],
-        fallback: true // false or 'blocking'
-    };
-}
+//         paths: [{ params: { searchkey: 'bbc', page: '1' } }],
+//         fallback: true // false or 'blocking'
+//     };
+// }
 
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 
     const { searchkey, page } = context.params;
 
@@ -83,7 +85,7 @@ export async function getStaticProps(context) {
 
         const parcelData = { url: `https://spankbang.party/s/${searchkey.toLowerCase().trim()}/${page}/?o=all` };
 
-        const API_URL = `${process.env.BACKEND_URL}getvideos`;
+        const API_URL = `${process.env.BACKEND_URL}getVideos`;
 
         const rawResponse = await fetch(API_URL, {
             headers: {

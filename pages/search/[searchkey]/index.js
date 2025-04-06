@@ -7,7 +7,7 @@ import Videos from "../../../components/Videos";
 import Header from '../../../components/searchPage/Header';
 import { updatekeywords } from "../../../config/firebase/lib";
 import { scrapeVideos } from '../../../config/spangbang';
-import { capitalizeFirstLetter } from '../../../config/utils';
+
 
 function Search({ video_collection, pages }) {
 
@@ -26,11 +26,14 @@ function Search({ video_collection, pages }) {
   }, [searchkey]);
 
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   if (router.isFallback || !searchkey) {
     return (
       <div className="flex justify-center mx-auto mt-10 ">
-        <BeatLoader loading size={25} color={'#D3D3D3'} />
+        <BeatLoader loading size={25} color={'#232b2b'} />
       </div>
     );
   }
@@ -38,13 +41,14 @@ function Search({ video_collection, pages }) {
 
   return (
     <>
-      <Head>
+     <Head>
         <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos`}</title>
         <meta name="description"
           content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos for free, here on FuckVideo.live. Discover the growing collection of high quality Most Relevant XXX movies and clips. No other sex tube is more popular and features more ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} scenes than FuckVideo! Browse through our impressive selection of porn videos in HD quality on any device you own.`} />
         {/* Additional meta tags */}
         <link rel="canonical" href={`https://FuckVideo.live/search/${searchkey}`} />
       </Head>
+
 
       <Header keyword={searchkey.replace("+", " ")} pageNumber={currentPageNumberURL} />
       <Videos data={video_collection} />
@@ -56,22 +60,22 @@ function Search({ video_collection, pages }) {
 export default Search;
 
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { searchkey: 'bbc' } },
-    ],
-    fallback: true // 'blocking' or 'true'
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       { params: { searchkey: 'bbc' } },
+//     ],
+//     fallback: true // 'blocking' or 'true'
+//   };
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { searchkey } = context.params;
 
   if (searchkey == "bbc") {
 
     const parcelData = { url: `https://spankbang.party/s/${searchkey.toLowerCase().trim()}/?o=all` };
-    const API_URL = `${process.env.BACKEND_URL}getvideos`;
+    const API_URL = `${process.env.BACKEND_URL}getVideos`;
 
     const rawResponse = await fetch(API_URL, {
       headers: {
@@ -83,6 +87,7 @@ export async function getStaticProps(context) {
     });
 
     const { finalDataArray, pages } = await rawResponse.json();
+
 
     return {
       props: {

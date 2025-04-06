@@ -117,7 +117,7 @@ function Index() {
                 </div>
             </div>
 
-            <h1 className=' mt-6  ml-1 2xl:my-3 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_yellow'>Trending Pornstars</h1>
+            <h1 className=' mt-6  ml-1 2xl:my-3 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans  font-poppins font-medium w-fit border-b-[3px] border-theme_red'>Trending Pornstars</h1>
 
 
             <div className='mt-1  grid grid-cols-3 p-1 sm:grid-cols-3 gap-2 md:gap-3 lg:gap-4  md:grid-cols-5 lg:grid-cols-6'>

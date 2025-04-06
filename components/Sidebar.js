@@ -38,7 +38,7 @@ function  Sidebar() {
                 return (
 
                     <Link key={category.name} href={`/category/${category.name.replaceAll('.png', "").toLowerCase().trim()}`}>
-                        <h2 className="w-fit hover:font-semibold hover:text-white border-b-[3px] hover:border-theme_yellow border-transparent text-[16px] 2xl:text-[18px] text-gray-300 m-2 cursor-pointer capitalize font-inter whitespace-nowrap">{category.name.replaceAll('.png', "")}</h2>
+                        <h2 className="w-fit hover:font-semibold hover:text-white border-b-[3px] hover:border-theme_red border-transparent text-[16px] 2xl:text-[18px] text-gray-300 m-2 cursor-pointer capitalize font-inter whitespace-nowrap">{category.name.replaceAll('.png', "")}</h2>
                     </Link>
 
                 )

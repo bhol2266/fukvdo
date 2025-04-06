@@ -228,7 +228,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                             {/* <DownloadIcon className='h-7 text-gray-700' /> */}
 
-                            <button onClick={download} className='font-inter text-[12px] lg:text-lg px-2 lg:px-4 py-1 lg:py-1.5 bg-theme_yellow rounded-md text-white text-center lg:mt-1 navbar'>Download</button>
+                            <button onClick={download} className='font-inter text-[12px] lg:text-lg px-2 lg:px-4 py-1 lg:py-1.5 bg-theme_red rounded-md text-white text-center lg:mt-1 navbar'>Download</button>
                             <Menu as="div" className="relative  text-left">
                                 <div className=' w-fit relative '>
                                     <Menu.Button className="flex items-center space-x-1">
@@ -258,7 +258,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
                                                                 <a
                                                                     href="#"
                                                                     className={classNames(
-                                                                        quality === Quality ? "font-bold text-theme_yellow" : "font-normal text-white",
+                                                                        quality === Quality ? "font-bold text-theme_red" : "font-normal text-white",
                                                                         'block py-2 text-sm lg:text-lg text-right mr-1'
                                                                     )}
                                                                 >

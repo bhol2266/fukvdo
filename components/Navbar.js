@@ -23,6 +23,7 @@ import Link from 'next/link';
 var navigation = [
     { name: 'Home', href: '/', current: true },
     { name: 'Category', href: '/category', current: false },
+    { name: 'Creators', href: '/creators', current: false },
     { name: 'Pornstars', href: '/pornstar', current: false },
     { name: 'Channels', href: '/channels', current: false },
     { name: 'Sex Chat', href: 'https://play.google.com/store/apps/details?id=com.bhola.livevideochat4&hl=en-IN', current: false },
@@ -366,7 +367,7 @@ function Navbar() {
             <div className='flex justify-around items-center lg:hidden font-arial shadow-lg mb-2'>
                 <Link href='/' legacyBehavior>
                     <a
-                        className={`sm:text-xl xl:text-[28px] text-md text-white text-center p-1 border-b-[3px] ${currentPath === '/' ? 'border-theme_yellow' : 'hover:border-theme_yellow border-transparent'}`}
+                        className={`sm:text-xl xl:text-[28px] text-md text-white text-center p-1 border-b-[3px] ${currentPath === '/' ? 'border-theme_red' : 'hover:border-theme_red border-transparent'}`}
                         rel="dofollow"
                     >
                         Home
@@ -375,7 +376,7 @@ function Navbar() {
 
                 <Link href='/category' legacyBehavior>
                     <a
-                        className={`sm:text-xl xl:text-[28px] text-md text-white text-center p-1 border-b-[3px] ${currentPath === '/category' ? 'border-theme_yellow' : 'hover:border-theme_yellow border-transparent'}`}
+                        className={`sm:text-xl xl:text-[28px] text-md text-white text-center p-1 border-b-[3px] ${currentPath === '/category' ? 'border-theme_red' : 'hover:border-theme_red border-transparent'}`}
                         rel="dofollow"
                     >
                         Categories
@@ -384,7 +385,7 @@ function Navbar() {
 
                 <Link href='/channels' legacyBehavior>
                     <a
-                        className={`group flex items-center justify-center space-x-1 -mb-1 pb-1 border-b-[3px] ${currentPath === '/channels' ? 'border-theme_yellow' : 'hover:border-theme_yellow border-transparent'}`}
+                        className={`group flex items-center justify-center space-x-1 -mb-1 pb-1 border-b-[3px] ${currentPath === '/channels' ? 'border-theme_red' : 'hover:border-theme_red border-transparent'}`}
                         rel="dofollow"
                     >
                         <img src="/channel.png" alt="channel-icon" className='h-5 m' />
@@ -396,7 +397,7 @@ function Navbar() {
 
                 <Link href='/membership' legacyBehavior>
                     <a
-                        className='sm:text-md text-sm text-white rounded-[22px] text-center px-3 p-1 m-1 bg-theme_yellow hover:scale-105 transition-transform duration-30 block_popunder'
+                        className='sm:text-md text-sm text-white rounded-[22px] text-center px-3 p-1 m-1 bg-theme_red hover:scale-105 transition-transform duration-30 block_popunder'
                         rel="dofollow"
                     >
                         Join Now
@@ -508,7 +509,7 @@ function Navbar() {
                                 <a
                                     rel="dofollow" 
                                 >
-                                    <button className="bg-theme_yellow text-white rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder hover:scale-105 transition-transform duration-300 text-nowrap">
+                                    <button className="bg-theme_red text-white rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder hover:scale-105 transition-transform duration-300 text-nowrap">
                                         Join Now
                                     </button>
                                 </a>
@@ -536,7 +537,7 @@ function Navbar() {
                             <Link href={item.href} legacyBehavior key={item.name}>
                                 <a rel="dofollow"
                                     className={`text-xl 2xl:text-2xl font-semibold text-white cursor-pointer p-1 border-b-4 
-                    ${isActive ? 'border-theme_yellow' : 'border-transparent hover:border-theme_yellow'}
+                    ${isActive ? 'border-theme_red' : 'border-transparent hover:border-theme_red'}
                     transition-colors duration-300`}
                                 >
                                     {item.name}

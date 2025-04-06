@@ -141,20 +141,20 @@ export const SignUpForm = () => {
 
                     <div className=' p-4 lg:p-8  rounded-lg bg-neutral-600 space-y-2 lg:space-y-4 mb-4 lg:mb-0'>
                         <div className='flex items-center space-x-2 lg:space-x-3   block'>
-                            <FaCheckCircle className='text-theme_yellow text-[14px] lg:text-[16px] flex-shrink-0' />
+                            <FaCheckCircle className='text-theme_red text-[14px] lg:text-[16px] flex-shrink-0' />
                             <p className='text-white font-inter text-[14px] lg:text-[16px]'>Unlimted Downloads!</p>
                         </div>
 
                         <div className='flex items-center space-x-2 lg:space-x-3  block'>
-                            <FaCheckCircle className='text-theme_yellow text-[14px] lg:text-[16px] flex-shrink-0' />
+                            <FaCheckCircle className='text-theme_red text-[14px] lg:text-[16px] flex-shrink-0' />
                             <p className='text-white font-inter text-[14px] lg:text-[16px]'>Video recommendations curated for you</p>
                         </div>
                         <div className='flex items-center space-x-2 lg:space-x-3  block'>
-                            <FaCheckCircle className='text-theme_yellow text-[14px] lg:text-[16px] flex-shrink-0' />
+                            <FaCheckCircle className='text-theme_red text-[14px] lg:text-[16px] flex-shrink-0' />
                             <p className='text-white font-inter text-[14px] lg:text-[16px]'>Subscribe to channels and pornstars</p>
                         </div>
                         <div className='flex items-center space-x-2 lg:space-x-3  block'>
-                            <FaCheckCircle className='text-theme_yellow text-[14px] lg:text-[16px] flex-shrink-0' />
+                            <FaCheckCircle className='text-theme_red text-[14px] lg:text-[16px] flex-shrink-0' />
                             <p className='text-white font-inter text-[14px] lg:text-[16px]'>Create and enjoy playlists</p>
                         </div>
 
@@ -247,7 +247,7 @@ export const SignUpForm = () => {
 
                     <p className="my-3 text-center text-sm text-white">
                         Already have an account?
-                        <span onClick={() => { loginHere() }} className="underline cursor-pointer text-theme_yellow"> Login here</span>
+                        <span onClick={() => { loginHere() }} className="underline cursor-pointer text-theme_red"> Login here</span>
                     </p>
 
 
@@ -280,7 +280,7 @@ export const SignUpForm = () => {
                             By Registering, I certify that I am over 18 years old and I agree to
                         </p>
                         <Link href="/terms">
-                            <p className='text-xs text-center font-inter font-semibold text-theme_yellow hover:underline cursor-pointer'>
+                            <p className='text-xs text-center font-inter font-semibold text-theme_red hover:underline cursor-pointer'>
                                 Terms of Service.
                             </p>
                         </Link>

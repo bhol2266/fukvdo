@@ -6,7 +6,7 @@ import Sidebar from "../../../components/Sidebar";
 import Videos from "../../../components/Videos";
 import Header from '../../../components/searchPage/Header';
 import { scrapeVideos } from "../../../config/spangbang";
-import { capitalizeFirstLetter } from '../../../config/utils';
+
 
 
 function Category({ video_collection, pages }) {
@@ -16,7 +16,7 @@ function Category({ video_collection, pages }) {
   if (router.isFallback) {
     return (
       <div className="flex justify-center mx-auto mt-10 ">
-        <BeatLoader loading size={25} color={'#D3D3D3'} />
+        <BeatLoader loading size={25} color={'#232b2b'} />
       </div>
     )
   }
@@ -24,12 +24,15 @@ function Category({ video_collection, pages }) {
   const { category } = router.query
   const currentPageNumberURL = '1'
 
- 
+  function capitalizeFirstLetter(string) {
+    
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   return (
     <>
 
-      <Head>
+<Head>
         <title>{capitalizeFirstLetter(category)} sex videos</title>
         <meta name="description" content={`Watch free collection of ${capitalizeFirstLetter(category)} sex videos, ${category} porn videos, latest ${category} videos in high quality only on FuckVideo.`} />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -78,47 +81,29 @@ export async function getStaticProps(context) {
 
   const { category } = context.params;
 
-  if (category == "creampie") {
 
+  const parcelData = { url: `https://spankbang.party/s/${category}/?o=all` };
 
-    const parcelData = { url: `https://spankbang.party/s/${category}/?o=all` };
+  const API_URL = `${process.env.BACKEND_URL}getVideos`;
 
-    const API_URL = `${process.env.BACKEND_URL}getvideos`;
+  const rawResponse = await fetch(API_URL, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
+    body: JSON.stringify(parcelData),
+  });
 
-    const rawResponse = await fetch(API_URL, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify(parcelData),
-    });
-
-    const { finalDataArray, pages } = await rawResponse.json();
+  const { finalDataArray, pages } = await rawResponse.json();
 
 
 
-    return {
-      props: {
-        video_collection: finalDataArray,
-        pages: pages
-      }
+  return {
+    props: {
+      video_collection: finalDataArray,
+      pages: pages
     }
-  }
-  else {
-
-    const obj = await scrapeVideos(`https://spankbang.party/s/${category}/?o=all`)
-    var finalDataArray = obj.finalDataArray
-    var pages = obj.pages
-
-
-    return {
-      props: {
-        video_collection: finalDataArray,
-        pages: pages
-      }
-    }
-
   }
 
 

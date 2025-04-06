@@ -120,7 +120,7 @@ const Membership = () => {
                                     value={index}
                                     checked={selectedPlan.duration === plan.duration}
                                     onChange={() => handlePlanChange(plan)}
-                                    className="form-radio h-5 w-5 lg:h-6 lg:w-6 mr-2 lg:mr-3 text-theme_yellow border-semiblack focus:ring-semiblack"
+                                    className="form-radio h-5 w-5 lg:h-6 lg:w-6 mr-2 lg:mr-3 text-theme_red border-semiblack focus:ring-semiblack"
                                 />
                                 <label htmlFor={`plan-${index}`} className="font-poppins text-md text-semiblack lg:text-lg">{plan.duration}</label>
                                 <span className={`font-arial font-semibold text-xs lg:text-sm ml-2 bg-red-500 text-white rounded-md px-1 py-0.5 ${plan.offer.length === 0 ? "hidden" : ""}`}>{plan.offer}</span>

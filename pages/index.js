@@ -5,26 +5,29 @@ import { useContext, useEffect, useState } from 'react';
 import ReactCountryFlag from "react-country-flag";
 
 import BannerAds from '../components/Ads/BannerAds';
+import Pagination from '../components/Pagination';
 import Videos from '../components/Videos';
 import Category_slider from '../components/category_slider';
 import Channels_slider from '../components/channels_slider';
 import Pornstar_slider from '../components/pornstar_slider';
 
-import Link from "next/link";
 import Homepage_Title from '../components/Homepage_Title';
-import ShowMore from "../components/ShowMore";
-import { getFirstKeyword, updateCountry } from '../config/firebase/lib';
+import { getFirstKeyword, getSubscribedChannels, getSubscribedPornstars, updateCountry } from '../config/firebase/lib';
 import { getLanguge } from '../config/getLanguge';
-import { fetchVideos, getViewChannels, getViewPornstars, shuffle } from '../config/utils';
+import { fetchVideos, getViewChannels, getViewCreators, getViewPornstars, shuffle } from '../config/utils';
 import videosContext from '../context/videos/videosContext';
+import Link from "next/link";
+import Creators_slider from "../components/creators_slider";
+import Header from "../components/searchPage/Header";
 
-export default function Home({ video_collection, trendingChannels, tags, trendingCategories, trendingPornstars }) {
+export default function Home({ finalDataArray, trendingChannels, tags, trendingPornstars, trendingCreators }) {
   const { currentLocation, setcurrentLocation, viewType, setViewType } = useContext(videosContext);
   const [countryVideos, setcountryVideos] = useState([]);
   const [countryLanguage, setcountryLanguage] = useState('');
   const [lang, setLang] = useState('');
   const [TrendingChannels, setTrendingChannels] = useState(trendingChannels);
   const [TrendingPornstars, setTrendingPornstars] = useState(trendingPornstars);
+  const [TrendingCreators, setTrendingCreators] = useState([]);
 
 
   const [recommendedVideos, setRecommendedVideos] = useState([]);
@@ -105,14 +108,14 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
 
   }
 
-  async function checkSubscribed_Channels_Pornstars() {
+  async function checkSubscribed_Channels_Pornstars_Creators() {
 
 
 
     const viewchannels = getViewChannels();
     const viewPornstars = getViewPornstars();
+    const viewCreators = getViewCreators();
 
-    console.log(viewchannels);
 
 
     if (viewchannels) {
@@ -147,10 +150,23 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
           return true; // Keep this channel
         }
       });
-
-
-
       setTrendingPornstars(uniquePornstars);
+    }
+
+    if (viewCreators) {
+      const combinedCreators = [...viewCreators, ...trendingCreators];
+      const seen = new Set();
+
+      // Filter out duplicates, keeping the first occurrence
+      const uniqueCreators = combinedCreators.filter(creator => {
+        if (seen.has(creator.creatorName)) {
+          return false; // Skip this channel if it's already seen
+        } else {
+          seen.add(creator.creatorName); // Add to seen Set
+          return true; // Keep this channel
+        }
+      });
+      setTrendingCreators(uniqueCreators);
     }
 
   }
@@ -167,7 +183,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
     fetchLocation();
     createRecommendedVideos()
 
-    checkSubscribed_Channels_Pornstars()
+    checkSubscribed_Channels_Pornstars_Creators()
   }, []);
 
 
@@ -195,8 +211,8 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
       </Head>
 
 
-      <div className='flex justify-between items-center pt-2 md:hidden basicMargin'>
-        <span className='text-[18px]   font-inter text-gray-300 '>Trending Channels</span>
+      <div className='flex justify-between items-center my-4 md:hidden basicMargin'>
+        <span className='text-[20px]  font-semibold  font-inter '>Trending Channels</span>
         <img
           className='h-[20px] w-[20px] cursor-pointer sm:hidden'
           src={viewType === 'horizontal' ? './grid.png' : './horizontal.png'}
@@ -206,23 +222,22 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
       </div>
       <Channels_slider trendingChannels={TrendingChannels} />
 
-
+{/* 
       <div className="w-full overflow-x-auto whitespace-nowrap py-2 scrollbar-hide md:hidden select-none">
         {tags.map((tag, index) => (
           <Link legacyBehavior key={tag.tag} href={`/search/${tag.tag.trim()}`} passHref>
-            <a className="bg-neutral-600 hover:text-semiblack text-white  px-3 py-1.5 rounded-lg m-1 ml-2 inline-block text-sm hover:bg-gray-100 font-inter">
+            <a className="bg-gray-200  text-semiblack px-3 py-1.5 rounded-lg m-1 ml-2 text-sm hover:bg-gray-300">
               {tag.tag}
             </a>
           </Link>
         ))}
-      </div>
+      </div> */}
 
-      <main className="flex-row flex  mt-1 md:mt-2 md:space-x-3">
+      <main className="flex-row flex  md:mt-2 md:space-x-3">
         {/* <Sidebar /> */}
         <div className='w-full overflow-hidden'>
-          <h1 className="lg:text-xl text-lg  text-gray-300 my-3 font-inter basicMargin w-fit border-b-[3px] border-theme_yellow">Trending Free Porn Videos</h1>
-          <Videos data={video_collection[0].finalDataArray} />
-          <ShowMore href={"/trending"} alt={"Trending Free Porn Videos"} />
+          <Header keyword={"trending"} pageNumber={"1"} />
+          <Videos data={finalDataArray} />
 
 
 
@@ -230,6 +245,8 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
           {recommendedVideos.length > 0 &&
             <div>
               <Homepage_Title title="Recommended Videos" />
+
+
               <Videos data={recommendedVideos.slice(0, 20)} />
               {/* <a href={`/upcoming`}>
                 <img src='/more_video.png' className='mx-auto h-10 md:h-[44px] 2xl:h-[54px] mb-4 cursor-pointer hover:scale-105 transition-transform duration-300' alt="More Upcoming Videos" />
@@ -239,7 +256,7 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
 
           {countryVideos.length !== 0 && (
             <>
-              <div className="flex items-center space-x-2 items-center basicMargin mt-6">
+              <div className="flex items-center space-x-2  basicMargin ">
                 <Homepage_Title title={`Popular Porn Videos in ${currentLocation.countryCode}`} />
 
                 <ReactCountryFlag
@@ -253,10 +270,16 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
                 />
               </div>
               <Videos data={shuffle(countryVideos).slice(0, 12)} />
-              <ShowMore href={`/search/${lang.toLowerCase().trim()}`} alt={"More Popular Porn Videos"} />
-
+              <a href={`/search/${lang.toLowerCase().trim()}`}>
+                <img src='/more_video.png' className='mx-auto h-10 md:h-[44px] 2xl:h-[54px] mb-6 cursor-pointer hover:scale-105 transition-transform duration-300' alt="More Popular Porn Videos" />
+              </a>
             </>
           )}
+
+          <div className='md:hidden'>
+            <Homepage_Title title="Trending Categories" />
+            <Category_slider />
+          </div>
 
           <div className='md:hidden'>
             <Homepage_Title title="Trending Pornstars" />
@@ -264,46 +287,30 @@ export default function Home({ video_collection, trendingChannels, tags, trendin
           </div>
 
 
-          <Homepage_Title title="Upcoming" />
-          <Videos data={video_collection[1].finalDataArray} />
-          <ShowMore href={`/upcoming`} alt={"More Upcoming Videos"} />
+
+          {TrendingCreators.length != 0 &&
+            <div className='md:hidden'>
+              <Homepage_Title title="Trending Creators" />
+              <Creators_slider trendingCreators={TrendingCreators} />
+            </div>
+          }
 
 
 
-          <div className='md:hidden'>
-            <Homepage_Title title="Trending Categories" />
-            <Category_slider trendingCategories={trendingCategories.slice(1)} />
-          </div>
-
-          <Homepage_Title title="Featured" />
-          <Videos data={video_collection[2].finalDataArray} />
-          <ShowMore href={`/channels`} alt={"More Featured Videos"} />
-
-
-
-
-          <Homepage_Title title="Popular" />
-          <Videos data={video_collection[3].finalDataArray} />
-          <ShowMore href={`/popular`} alt={"More Popular Videos"} />
-
-
-          <Homepage_Title title="New Videos" />
-          <Videos data={video_collection[4].finalDataArray} />
-          <ShowMore href={`/new`} alt={"More New Videos"} />
-
-
-
-          <Homepage_Title title="Random" />
-          <Videos data={video_collection[5].finalDataArray} />
-          <ShowMore href={`/random`} alt={"More Random Videos"} />
+          <Pagination data={{ url: `/`, currentPageNumberURL: "1", pages: ["1", "58"] }} />
 
         </div>
+
+
+
       </main>
 
+
+
       <footer>
-        <a className='' href="https://www.fuckvideo.live/">.</a>
-        <a className='' href="https://www.chutlunds.com/">.</a>
-        <a className='' href="https://www.hindisexstory.app/">.</a>
+        <a href="https://www.fuckvideo.live/">.</a>
+        <a href="https://www.Chutlunds.com/">.</a>
+        <a href="https://www.desikahaniya.in/">.</a>
         <BannerAds />
 
       </footer>
@@ -326,13 +333,15 @@ export async function getStaticProps({ req, res }) {
     body: JSON.stringify(parcelData),
   });
   const ress = await rawResponse.json();
+  var trendingCreators = []
+
 
   return {
     props: {
-      video_collection: ress.result.finalDataArray_Array,
+      finalDataArray: ress.result.finalDataArray,
       trendingChannels: ress.result.trendingChannels,
+      trendingCreators: trendingCreators,
       tags: ress.result.tags,
-      trendingCategories: ress.result.trendingCategories,
       trendingPornstars: ress.result.trendingPornstars,
     },
   };

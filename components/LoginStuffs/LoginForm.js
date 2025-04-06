@@ -177,7 +177,7 @@ export const LoginForm = () => {
                     </p>
                     <p className="mb-2 text-center text-sm text-white">
                         Don't have an account?
-                        <span onClick={() => { setSignUpFormVisible(true); setLoginFormVisible(false) }} className="underline cursor-pointer text-theme_yellow">Register here</span>
+                        <span onClick={() => { setSignUpFormVisible(true); setLoginFormVisible(false) }} className="underline cursor-pointer text-theme_red">Register here</span>
                     </p>
 
 
@@ -208,7 +208,7 @@ export const LoginForm = () => {
                             By Registering, I certify that I am over 18 years old and I agree to
                         </p>
                         <Link href="/terms">
-                            <p className='text-xs text-center font-inter font-semibold text-theme_yellow hover:underline cursor-pointer'>
+                            <p className='text-xs text-center font-inter font-semibold text-theme_red hover:underline cursor-pointer'>
                                 Terms of Service.
                             </p>
                         </Link>

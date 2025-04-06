@@ -7,7 +7,7 @@ import { Fragment } from 'react'
 import Router, { useRouter } from 'next/router'
 import { useContext } from 'react'
 import videosContext from '../../context/videos/videosContext'
-import { capitalizeFirstLetter } from '../../config/utils'
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
@@ -34,7 +34,7 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
     //by default
     var filter_isPresent = 'Trending'
     var quality_isPresent = 'All'
-    
+
     if (filteredObjsArrayProps) {
 
         for (let index = 0; index < filteredObjsArrayProps.length; index++) {
@@ -97,15 +97,17 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
 
     const clickHandler = (query) => {
 
-      
 
         if (Router.pathname.includes("/query") && filteredObjsArrayProps.length == 0) {
             //when there is no filter go back to index page instead of query page. 
             if (Router.pathname.includes("/channels/")) {
-                router.push(`/channels/${code}/${keyword.toLowerCase()}`)
+                router.push(`/channels/${code}/${keyword.toLowerCase()}`);
+            } else if (Router.pathname.includes("/creators/")) {
+                router.push(`/creators/${code}/${keyword.toLowerCase()}`);
             } else {
-                router.push(`/pornstar/${code}/${keyword.toLowerCase()}`)
+                router.push(`/pornstar/${code}/${keyword.toLowerCase()}`);
             }
+
             return
         }
         setSpinner(true)
@@ -118,8 +120,14 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
                 page: 1,
                 code: code
             }
-        } else {
-
+        } else if (Router.pathname.includes("/creators/")) {
+            var queryObj = {
+                creatorName: keyword.trim(),
+                page: 1,
+                creatorCode: code
+            }
+        }
+        else {
             var queryObj = {
                 pornstar: keyword.trim(),
                 page: 1,
@@ -140,7 +148,11 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
         var pathname = ""
         if (Router.pathname.includes("/channels/")) {
             pathname = "/channels/query/"
-        } else {
+        }
+        else if (Router.pathname.includes("/creators/")) {
+            pathname = "/creators/query/"
+        }
+        else {
             pathname = "/pornstar/query/"
         }
 
@@ -178,19 +190,21 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
 
     }
 
-   
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
 
     return (
 
-        <div className='basicMargin lg:ml-4 2xl:ml-6'>
+        <div className='basicMargin '>
 
             <div className='flex items-center md:pr-10 pt-2 my-1  md:my-2 '>
                 <div className='flex  '>
-                    <h1 className='text-xl md:text-2xl  font-inter my-1  '>{capitalizeFirstLetter(keyword.replace(/\+/g, " ").replace(/_/g, " "))} Porn videos</h1>
+                    <h1 className='text-xl md:text-2xl   font-semibold text-white font-inter my-1  '>{capitalizeFirstLetter(keyword.replace(/\+/g, " "))} Porn videos</h1>
 
                 </div>
-                <p className='text-md md:text-xl  pr-1  flex-grow font-inter  text-right '>{`Page-${pageNumber}`}</p>
+                <p className='text-md md:text-xl  pr-1  flex-grow font-inter  text-right text-gray-300 '>{`Page-${pageNumber}`}</p>
             </div>
 
 
@@ -216,8 +230,8 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
 
                         <Menu as="div" className={` relative  text-left`}>
                             <div className='w-fit'>
-                            <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
-                            Filter
+                                <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
+                                    Filter
                                     <FilterIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px]" aria-hidden="true" />
                                 </Menu.Button>
 
@@ -237,16 +251,16 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
                                     {filter.map(item => {
                                         return (
                                             <Menu.Item key={item.name}  >
-                                            {({ active }) => (
-                                                <p onClick={() => { clickHandler(item.query) }} className={classNames(
-                                                    active ? 'bg-neutral-500 text-theme_yellow ' : 'text-white',
-                                                    'block px-4 py-2 text-sm  hover:text-white hover:bg-neutral-500 cursor-pointer'
+                                                {({ active }) => (
+                                                    <p onClick={() => { clickHandler(item.query) }} className={classNames(
+                                                        active ? 'bg-neutral-500 text-theme_yellow ' : 'text-white',
+                                                        'block px-4 py-2 text-sm  hover:text-white hover:bg-neutral-500 cursor-pointer'
+                                                    )}
+                                                    >
+                                                        <span className={`${item.name === filter_isPresent ? "text-theme_yellow font-bold" : ""}`}>{item.name}</span>
+                                                    </p>
                                                 )}
-                                                >
-                                                    <span className={`${item.name === filter_isPresent ? "text-theme_yellow font-bold" : ""}`}>{item.name}</span>
-                                                </p>
-                                            )}
-                                        </Menu.Item>
+                                            </Menu.Item>
 
 
 
@@ -262,8 +276,8 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
 
                         <Menu as="div" className="relative  text-left">
                             <div className=' w-fit'>
-                            <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
-                            Quality
+                                <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
+                                    Quality
                                     <CogIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px]" aria-hidden="true" />
                                 </Menu.Button>
                             </div>
@@ -283,16 +297,16 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
                                         {qualtiy.map(item => {
                                             return (
                                                 <Menu.Item key={item.name}  >
-                                                {({ active }) => (
-                                                    <p onClick={() => { clickHandler(item.query) }} className={classNames(
-                                                        active ? 'bg-neutral-500 text-theme_yellow ' : 'text-white',
-                                                        'block px-4 py-2 text-sm  hover:text-white hover:bg-neutral-500 cursor-pointer'
+                                                    {({ active }) => (
+                                                        <p onClick={() => { clickHandler(item.query) }} className={classNames(
+                                                            active ? 'bg-neutral-500 text-theme_yellow ' : 'text-white',
+                                                            'block px-4 py-2 text-sm  hover:text-white hover:bg-neutral-500 cursor-pointer'
+                                                        )}
+                                                        >
+                                                            <span className={`${item.name === quality_isPresent ? "text-theme_yellow font-bold" : ""}`}>{item.name}</span>
+                                                        </p>
                                                     )}
-                                                    >
-                                                        <span className={`${item.name === quality_isPresent ? "text-theme_yellow font-bold" : ""}`}>{item.name}</span>
-                                                    </p>
-                                                )}
-                                            </Menu.Item>
+                                                </Menu.Item>
                                             )
                                         })}
 
@@ -304,7 +318,6 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps, co
                         </Menu>
 
                     </div>
-
                     <img
                         className='h-[20px] w-[20px] cursor-pointer sm:hidden mb-2 '
                         src={viewType === 'horizontal' ? '/grid.png' : '/horizontal.png'}
