@@ -63,10 +63,7 @@ export async function getServerSideProps(context) {
   var completeSearch = ''
   if (o) {
     filteredObjsArray.push(`o=${o}`)
-  } else {
-    // This is by default required if not any filter is present accoring to new spangbang update
-    filteredObjsArray.push(`o=all`)
-  }
+  } 
   if (q) {
     filteredObjsArray.push(`q=${q}`)
 
@@ -108,10 +105,10 @@ export async function getServerSideProps(context) {
   }
   else {
 
-    const obj = await scrapeVideos(`https://spankbang.party/s/${searchkey}/${page}/?o=all`)
+    const obj = await scrapeVideos(`https://spankbang.party/s/${searchkey}/${page}/`)
     finalDataArray = obj.finalDataArray
     pages = obj.pages
-    console.log(`https://spankbang.party/s/${searchkey}/${page}/?o=all`);
+    console.log(`https://spankbang.party/s/${searchkey}/${page}/`);
 
   }
 
