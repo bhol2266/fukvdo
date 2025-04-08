@@ -44,7 +44,7 @@ export default function Banner_for_chutlund2() {
         ) go to our alternate website{' '}
 
     
-        <a href="https://chutlunds1.com" className="underline text-yellow-500 font-inter">Chutlunds1.com</a>
+        <a href="https://chutlunds4.com/" className="underline text-yellow-500 font-inter">Chutlunds4.com</a>
       </span>
 
       <button onClick={handleClose} className="text-white">
