@@ -4,16 +4,17 @@ import { getCookie } from 'cookies-next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from "next/router";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
 import Pagination from '../../../../components/Pagination';
 import Header from '../../../../components/Pornstar_Channels/Header';
 import Videos from "../../../../components/Videos";
-import { updateSubcribedChannels } from '../../../../config/firebase/lib';
-import { useEffect } from "react";
+import { checkSubscribedChannel, updateSubcribedChannels } from '../../../../config/firebase/lib';
+import { updateViewChannels_Cookie } from '../../../../config/utils';
 
 
-function Index({ video_collection, pages, channel_name, channel_link, collageImages, channel_subscriber, channel_by }) {
+
+function Index({ video_collection, pages, channel_name, channel_link, collageImages, channel_subscriber, channel_by,channel_image }) {
 
     const router = useRouter();
     const { code, channelname, isReady } = router.query
@@ -24,24 +25,24 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
     const [isSubscribed, setIsSubscribed] = useState(false);
 
 
-    // useEffect(() => {
-    //     const fetchSubscriptionStatus = async () => {
-    //         const subscribed = await checkSubscribedChannel(channel_name);
-    //         setIsSubscribed(subscribed);
-    //     };
-    //     fetchSubscriptionStatus();
+    useEffect(() => {
+        const fetchSubscriptionStatus = async () => {
+            const subscribed = await checkSubscribedChannel(channel_name);
+            setIsSubscribed(subscribed);
+        };
+        fetchSubscriptionStatus();
 
 
-    //     const obj = {
-    //         channelName: channel_name,
-    //         href: `/${code}/channel/${channelname}/`,
-    //         imageUrl: `${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channel_name.trim().toLowerCase().replace(/ /g, "_").replace(/\+/g, "_")}.jpg`
+        const obj = {
+            channelName: channel_name,
+            href: `/${code}/channel/${channelname}/`,
+            imageUrl: channel_image
 
-    //     }
+        }
 
-    //     updateViewChannels_Cookie(obj)
+        updateViewChannels_Cookie(obj)
 
-    // }, [code, channelname]);
+    }, [code, channelname]);
 
 
     async function clickSubscribe() {
@@ -54,7 +55,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
         const obj = {
             channelName: channel_name,
             href: `/${code}/channel/${channelname}/`,
-            imageUrl: `${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channel_name.trim().toLowerCase().replace(/ /g, "_").replace(/\+/g, "_")}.jpg`
+            imageUrl: channel_image
 
         }
 
@@ -82,6 +83,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
+
 
     return (
         <>
@@ -126,9 +128,8 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
                         <div>
                             <img
                                 className="object-cover w-36 h-36 lg:w-44 lg:h-44 rounded-[15px] border-[1px] border-gray-200"
-                                src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channel_name.trim().toLowerCase().replace(/ /g, "_").replace(/\+/g, "_")}.jpg`}
-                                alt={channel_name}
-                                loading="lazy"
+                                    src={channel_image}
+                                alt={channel_name} loading="lazy"
                             />
                             <h2 className="text-lg lg:text-xl 2xl:text-2xl font-poppins text-gray-100 my-1 pl-1">
                                 {capitalizeFirstLetter(channel_name.replace(/\+/g, " "))}
@@ -212,30 +213,30 @@ export async function getStaticProps(context) {
     const { code, channelname } = context.params;
 
     const parcelData = { url: `https://spankbang.party/${code}/channel/${channelname}/` };
-    const API_URL = `${process.env.BACKEND_URL}getChannelVideos`;
-    const rawResponse = await fetch(API_URL, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        method: 'POST',
-        body: JSON.stringify(parcelData),
-    });
+        const API_URL = `${process.env.BACKEND_URL}getChannelVideos`;
+        const rawResponse = await fetch(API_URL, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            method: 'POST',
+            body: JSON.stringify(parcelData),
+        });
 
-    const { finalDataArray, pages, channel_name, channel_subscriber, channel_by, channel_link, collageImages } = await rawResponse.json();
-    return {
-        props: {
-            video_collection: finalDataArray,
-            pages: pages,
-            channel_name: channel_name,
-            channel_subscriber: channel_subscriber,
-            channel_by: channel_by,
-            channel_link: channel_link,
-            collageImages: collageImages,
-            channel_image: channelname
+        const { finalDataArray, pages, channel_name, channel_subscriber, channel_by, channel_link, collageImages,channel_image } = await rawResponse.json();
+        return {
+            props: {
+                video_collection: finalDataArray,
+                pages: pages,
+                channel_name: channel_name,
+                channel_subscriber: channel_subscriber,
+                channel_by: channel_by,
+                channel_link: channel_link,
+                collageImages: collageImages,
+                channel_image: channel_image,
 
+            }
         }
-    }
 }
 
 

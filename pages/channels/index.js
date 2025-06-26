@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import PopunderAds from '@/components/Ads/Popunder';
 import { SearchIcon } from '@heroicons/react/outline';
-import fs from 'fs';
 import Head from 'next/head';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Videos from '../../components/Videos';
@@ -85,7 +84,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
             var array = []
             channels.filter(obj => {
                 if (obj.channel_name.toLowerCase().includes(key.trim().toLowerCase())) {
-                    array.push(obj.channel_name)
+                    array.push(obj)
                 }
             })
             if (array) {
@@ -150,19 +149,19 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 </div>
 
                 <div className={`grid grid-cols-4  sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 lg:grid-cols-7 2xl:grid-cols-8 mt-4`}>
-                    {suggestedData.length != 0 && suggestedData.map(channelName => {
-                        const href = customiseUrl(channelName)
+                    {suggestedData.length != 0 && suggestedData.map(obj => {
+
+                        const href = customiseUrl(obj.channel_name)
                         return (
-                            <a key={channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
+                            <Link key={obj.channel_name} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                 <img
                                     className='object-cover w-full rounded  '
-                                    alt={channelName}
-                                    src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
-                                    loading="lazy"
+                                    alt={obj.imageUrl}
+                                    src={obj.imageUrl} loading="lazy"
                                 ></img>
-                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{channelName}</h2>
+                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{obj.channelName}</h2>
                             </div>
-                            </a>
+                            </Link>
                         )
                     })}
 
@@ -175,18 +174,17 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 <PopunderAds />
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
-                    {trendingChannels.map(channelName => {
-                        const href = customiseUrl(channelName)
+                    {trendingChannels.map(obj => {
+                        const href = customiseUrl(obj.channelName)
                         return (
-                            <Link key={channelName} href={href}>
+                            <Link key={obj.channelName} href={href}>
                                 <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                     <img
                                         className='object-cover w-full rounded  '
-                                        alt={channelName}
-                                        src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
-                                        loading="lazy"
+                                        alt={obj.imageUrl}
+                                        src={obj.imageUrl} loading="lazy"
                                     ></img>
-                                    <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{channelName}</h2>
+                                    <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{obj.channelName}</h2>
                                 </div>
                             </Link>
                             // items[i].charAt(0).toUpperCase() + items[i].substring(1);
@@ -202,17 +200,16 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
 
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
-                    {newChannels.map(channelName => {
-                        const href = customiseUrl(channelName)
+                    {newChannels.map(obj => {
+                        const href = customiseUrl(obj.channelName)
                         return (
-                            <Link key={channelName} href={href}>   <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
+                            <Link key={obj.channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                 <img
                                     className='object-cover w-full rounded  '
-                                    alt={channelName}
-                                    src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
-                                    loading="lazy"
+                                    alt={obj.imageUrl}
+                                    src={obj.imageUrl} loading="lazy"
                                 ></img>
-                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{channelName}</h2>
+                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{obj.channelName}</h2>
                             </div>
                             </Link>
                             // items[i].charAt(0).toUpperCase() + items[i].substring(1);
@@ -247,8 +244,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                                             <img
                                                 className='object-cover w-full rounded  '
                                                 alt={obj.image_url}
-                                                src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${obj.channel_name.replace(/ /g, "_").toLowerCase()}.jpg`}
-                                                loading="lazy"
+                                                src={obj.image_url} loading="lazy"
                                             ></img>
                                             <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{obj.channel_name}</h2>
                                         </div>
@@ -278,11 +274,13 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
 export default Index
 
+
 export async function getStaticProps({ req, res }) {
 
 
     const parcelData = { url: `https://spankbang.party/channels` };
     const API_URL = `${process.env.BACKEND_URL}getTrendingChannels`;
+
     const rawResponse = await fetch(API_URL, {
         headers: {
             'Accept': 'application/json',
@@ -298,43 +296,15 @@ export async function getStaticProps({ req, res }) {
 
 
 
-
-
-
-    const jsonData = JSON.parse(fs.readFileSync('JsonData/Channels.json', 'utf8'));
-
-    let trendingChannels_Filtered = []
-    let newChannels_Filtered = []
-
-    trendingChannels.forEach(channel => {
-        jsonData.forEach(channelObj => {
-            if (channel.toLowerCase().trim() == channelObj.channel_name.toLowerCase().trim()) {
-                trendingChannels_Filtered.push(channel)
-            }
-        })
-    })
-
-    newChannels.forEach(channel => {
-        jsonData.forEach(channelObj => {
-            if (channel.toLowerCase().trim() == channelObj.channel_name.toLowerCase().trim()) {
-                newChannels_Filtered.push(channel)
-            }
-        })
-    })
-
-
-
     return {
         props: {
             video_collection: finalDataArray,
-            trendingChannels: trendingChannels_Filtered,
-            newChannels: newChannels_Filtered,
+            trendingChannels: trendingChannels,
+            newChannels: newChannels,
             pages: pages
         }
     }
 
 }
-
-
 
 
