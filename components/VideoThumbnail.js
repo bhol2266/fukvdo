@@ -7,14 +7,14 @@ import { FaUserCheck } from "react-icons/fa";
 import videosContext from '../context/videos/videosContext';
 import PopunderAds from './Ads/Popunder';
 import Link from 'next/link';
+import { isMembershipActive } from '../config/utils';
 
 function VideoThumbnail({ details, type }) {
-
-
-
     const [videoPage, setVideoPage] = useState(false);
     const [showPoster, setShowPoster] = useState(true);
     const [spinnerLoader, setSpinnerLoader] = useState(false);
+    const [isMember, setIsMember] = useState(false);
+    const [membershipChecked, setMembershipChecked] = useState(false);
 
     const video = details;
     const key = details.href.substring(details.href.indexOf('video/') + 6);
@@ -22,14 +22,18 @@ function VideoThumbnail({ details, type }) {
     const keyy = keyTitle.substring(0, keyTitle.indexOf('/video'));
     const title = keyTitle.substring(keyTitle.indexOf('video/') + 6);
 
-
-    const { viewType, setViewType } = useContext(videosContext);
-
+    const { viewType } = useContext(videosContext);
 
     useEffect(() => {
         if (window.location.href.includes("/video")) {
             setVideoPage(true);
         }
+        const checkMembership = async () => {
+            const result = await isMembershipActive();
+            setIsMember(result);
+            setMembershipChecked(true);
+        };
+        checkMembership();
     }, []);
 
     const onClickHandler = () => {
@@ -56,43 +60,36 @@ function VideoThumbnail({ details, type }) {
     };
 
     const customiseUrl = (channelHref) => {
-        let returnHref = ""
-        if (video.refrenceLinkType == "channel") {
-
-            const code = channelHref.substring(1, channelHref.indexOf("/channel"))
-            const channelName = channelHref.substring(channelHref.indexOf("/channel/") + 9, channelHref.length - 1)
-            returnHref = `/channels/${code}/${channelName}`
-
+        let returnHref = "";
+        if (video.refrenceLinkType === "channel") {
+            const code = channelHref.substring(1, channelHref.indexOf("/channel"));
+            const channelName = channelHref.substring(channelHref.indexOf("/channel/") + 9, channelHref.length - 1);
+            returnHref = `/channels/${code}/${channelName}`;
         }
-        if (video.refrenceLinkType == "search") {
-
-            // const searchkey = channelHref.substring(channelHref.indexOf("/s/") + 4, channelHref.length - 1)
-            returnHref = `/search/${video.channelName}` //directly pass the searach key not need to extract from the href
-
+        if (video.refrenceLinkType === "search") {
+            returnHref = `/search/${video.channelName}`;
         }
-        if (video.refrenceLinkType == "creator") {
-
-            const pornstarCode = channelHref.substring(1, channelHref.indexOf("/pornstar"))
-            const pornstarName = channelHref.substring(channelHref.indexOf("/pornstar/") + 10, channelHref.length - 1)
-            returnHref = `/pornstar/${pornstarCode}/${pornstarName}`
-
+        if (video.refrenceLinkType === "creator" || video.refrenceLinkType === "pornstar") {
+            const pornstarCode = channelHref.substring(1, channelHref.indexOf("/pornstar"));
+            const pornstarName = channelHref.substring(channelHref.indexOf("/pornstar/") + 10, channelHref.length - 1);
+            returnHref = `/pornstar/${pornstarCode}/${pornstarName}`;
         }
-        if (video.refrenceLinkType == "pornstar") {
-            const pornstarCode = channelHref.substring(1, channelHref.indexOf("/pornstar"))
-            const pornstarName = channelHref.substring(channelHref.indexOf("/pornstar/") + 10, channelHref.length - 1)
-            returnHref = `/pornstar/${pornstarCode}/${pornstarName}`
+        returnHref = returnHref.replace("///", "/").replace("//", "/");
+        return returnHref;
+    };
 
-        }
-        returnHref = returnHref.replace("///", "/").replace("//", "/")
+    const hrefLink =
+        type === "premium"
+            ? isMember
+                ? `/video/${keyy}*${title}`
+                : "/membership"
+            : `/video/${keyy}*${title}`;
 
-        return returnHref
-    }
+    if (!membershipChecked && type === "premium") return null; // wait for membership check to complete
 
     return (
-
-
         <div>
-            <a className="block" href={`/video/${keyy}*${title}`} onClick={onClickHandler}>
+            <a className="block" href={hrefLink} onClick={onClickHandler}>
 
                 <div className="animate-fade flex flex-col items-start justify-center cursor-pointer rounded-md overflow-hidden transform transition duration-150 mb-3 2xl:mb-4">
                     <div className={`relative w-full overflow-hidden ${viewType === "grid" ? "aspect-custom md:aspect-video" : "aspect-video"}`}>

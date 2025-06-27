@@ -105,18 +105,14 @@ function Index({ video_collection, trendingChannels, newChannels }) {
         setdata(data.concat(channels.slice(startIndex, startIndex + 100)));
     }
 
-    const customiseUrl = (channel_name) => {
-        var href = ""
-        channels.forEach(obj => {
-            if (obj.channel_name === channel_name) {
-                href = obj.channel_href
-            }
-        })
+    const customiseUrl = (href) => {
+
         const code = href.substring(href.indexOf("party/") + 6, href.indexOf("/channel"))
         const channelname_href = href.substring(href.indexOf("channel/") + 8, href.length)
 
         return `/channels/${code}/${channelname_href}`
     }
+
 
 
     return (
@@ -148,18 +144,17 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                     </div>
                 </div>
 
-                <div className={`grid grid-cols-4  sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 lg:grid-cols-7 2xl:grid-cols-8 mt-4`}>
+                <div className={`grid grid-cols-4  sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7 mt-4`}>
                     {suggestedData.length != 0 && suggestedData.map(obj => {
-
                         const href = customiseUrl(obj.channel_name)
                         return (
-                            <Link key={obj.channel_name} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
+                            <Link key={obj.channel_name} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
                                 <img
-                                    className='object-cover w-full rounded  '
-                                    alt={obj.imageUrl}
-                                    src={obj.imageUrl} loading="lazy"
+                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-100 '
+                                    alt={obj.channel_name}
+                                    src={obj.image_url} loading="lazy"
                                 ></img>
-                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center    '>{obj.channelName}</h2>
+                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme_text '>{obj.channel_name}</h2>
                             </div>
                             </Link>
                         )
@@ -175,7 +170,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 <PopunderAds />
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                     {trendingChannels.map(obj => {
-                        const href = customiseUrl(obj.channelName)
+                        const href = customiseUrl(obj.channel_href)
                         return (
                             <Link key={obj.channelName} href={href}>
                                 <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
@@ -201,7 +196,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                     {newChannels.map(obj => {
-                        const href = customiseUrl(obj.channelName)
+                        const href = customiseUrl(obj.channel_href)
                         return (
                             <Link key={obj.channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >
                                 <img
@@ -237,7 +232,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                         <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                             {data.map(obj => {
 
-                                const href = customiseUrl(obj.channel_name)
+                                const href = customiseUrl(obj.channel_href)
                                 return (
                                     <a key={obj.channel_name} href={href}>
                                         <div className='  relative hover:scale-105 transform transition duration-150    aspect-box  ' >

@@ -4,8 +4,10 @@ import { useContext, useEffect, useRef, useState, } from 'react';
 import ReactCountryFlag from "react-country-flag";
 import { UserAuth } from "../context/AuthContext";
 import videosContext from '../context/videos/videosContext';
+import { MdLiveTv } from "react-icons/md";
 
 import { Fragment } from 'react';
+import { isMembershipActive } from "../config/utils";
 
 
 
@@ -40,6 +42,8 @@ function classNames(...classes) {
 function Navbar() {
 
     const { user, setUser, setLoginModalVisible } = UserAuth();
+    const [isMember, setIsMember] = useState(false);
+    const [daysLeft, setDaysLeft] = useState(null);
 
 
 
@@ -57,6 +61,24 @@ function Navbar() {
 
         if (localStorage.getItem("location") && !currentLocation) {
             setlocation(JSON.parse(localStorage.getItem("location")))
+        }
+
+
+        const isActive = isMembershipActive();
+        setIsMember(isActive);
+
+        if (isActive) {
+            const expiryString = getCookie('MembershipExpires');
+            console.log('====================================');
+            console.log(expiryString);
+            console.log('====================================');
+            if (expiryString) {
+                const expiryDate = new Date(expiryString);
+                const today = new Date();
+                const timeDiff = expiryDate.getTime() - today.getTime();
+                const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                setDaysLeft(daysRemaining);
+            }
         }
 
 
@@ -103,7 +125,7 @@ function Navbar() {
             setsearchBarVisibility('hidden')
 
         }
-        router.push('/search')
+        // router.push('/search')
     }
 
     const goSearch = (e) => {
@@ -160,7 +182,6 @@ function Navbar() {
             settags(filteredTagArray)
         }
     }
-
     return (
 
         <div className='font-inter bg-semiblack  shadow-lg shadow-semiblack'>
@@ -395,14 +416,26 @@ function Navbar() {
                     </a>
                 </Link>
 
-                <Link href='/membership' legacyBehavior>
-                    <a
-                        className='sm:text-md text-sm text-white rounded-[22px] text-center px-3 p-1 m-1 bg-theme_red hover:scale-105 transition-transform duration-30 block_popunder'
-                        rel="dofollow"
+                {isMember ? (
+                    <button
+                        className="rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-xs block_popunder text-nowrap bg-green-500 text-white"
+                        disabled
+                        aria-disabled="true"
+                        tabIndex={-1}
                     >
-                        Join Now
-                    </a>
-                </Link>
+                        ✔ Member - {daysLeft} day{daysLeft === 1 ? '' : 's'} left
+                    </button>
+                ) : (
+                    <Link href="/membership" legacyBehavior>
+                        <a
+                            className="rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder text-nowrap bg-theme_yellow text-semiblack hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            rel="dofollow"
+                        >
+                            Join Now
+                        </a>
+                    </Link>
+                )}
+
             </div>
 
             {/* Large Sreeen NavBar  */}
@@ -505,15 +538,24 @@ function Navbar() {
                                     <button className='font-inter bg-green-500 py-[5px] px-8  rounded-[22px] mr-3' onClick={signOut_method}>Logout</button>
                                 </div>
                             }
-                            <Link href='/membership' legacyBehavior>
-                                <a
-                                    rel="dofollow" 
+                            {isMember ? (
+                                <button
+                                    className="rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder text-nowrap bg-green-500 text-white "
+                                    disabled
                                 >
-                                    <button className="bg-theme_red text-white rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder hover:scale-105 transition-transform duration-300 text-nowrap">
-                                        Join Now
-                                    </button>
-                                </a>
-                            </Link>
+                                    ✔ Member - {daysLeft} day{daysLeft === 1 ? '' : 's'} left
+                                </button>
+                            ) : (
+                                <Link href="/membership" legacyBehavior>
+                                    <a rel="dofollow">
+                                        <button
+                                            className="rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder hover:scale-105 transition-transform duration-300 text-nowrap bg-theme_yellow text-semiblack"
+                                        >
+                                            Join Now
+                                        </button>
+                                    </a>
+                                </Link>
+                            )}
 
 
 
