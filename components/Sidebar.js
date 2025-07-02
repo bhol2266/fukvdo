@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from "next/router";
 import Link from 'next/link';
-import categories from "../JsonData/categoryImages/data.json"
+// import categories from "../JsonData/categoryImages/data.json"
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -29,21 +29,7 @@ function  Sidebar() {
     return (
         <div className='hidden md:flex md:flex-col border-[2.5px] border-[rgba(187, 187, 187, 0.41)] rounded-[12px]  h-fit pb-8 basicMargin_sidebar'>
 
-            <p className='font-inter font-semibold text-white text-[18px] my-4'>
-                CATEGORIES
-            </p>
-
-
-            {categories.map(category => {
-                return (
-
-                    <Link key={category.name} href={`/category/${category.name.replaceAll('.png', "").toLowerCase().trim()}`}>
-                        <h2 className="w-fit hover:font-semibold hover:text-white border-b-[3px] hover:border-theme_red border-transparent text-[16px] 2xl:text-[18px] text-gray-300 m-2 cursor-pointer capitalize font-inter whitespace-nowrap">{category.name.replaceAll('.png', "")}</h2>
-                    </Link>
-
-                )
-            })}
-
+            
         </div>
     )
 }

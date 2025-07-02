@@ -38,6 +38,8 @@ module.exports = {
         'button_hover': '#8C8C8C',
         'semiblack': '#28282B',
         'theme_red': 'rgb(226, 98, 100)',
+                'theme_yellow': '#E4D00A',
+
 
       },
       fontFamily: {

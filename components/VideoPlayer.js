@@ -103,8 +103,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
     }
 
 
-
-    const download = () => {
+   const download = () => {
 
         const active = isMembershipActive();
         if (active) {
